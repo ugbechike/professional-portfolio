@@ -237,7 +237,7 @@ svg {
   text-underline-offset: 5px;
 }
 .hero-contact {
-  display: none;
+  display: inline-flex;
 }
 .hero-foot {
   margin-top: 60px;
@@ -1066,4 +1066,39 @@ h2 {
     animation: none !important;
     transition: none !important;
   }
+}
+.cover-fallback {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  font-size: 40px;
+  font-family: var(--display);
+  color: var(--accent);
+}
+
+.card-contributions {
+  padding-left: 14px;
+  margin: 13px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.75;
+}
+.card-contributions li {
+  padding-left: 3px;
+  margin-top: 4px;
+}
+.card-impact {
+  border-left: 2px solid var(--accent);
+  padding-left: 12px;
+  margin-top: 17px;
+}
+.card-impact strong {
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--accent);
+}
+.card-impact p {
+  font-size: 10px;
+  line-height: 1.7;
+  margin-top: 4px;
 }

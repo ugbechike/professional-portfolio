@@ -11,7 +11,7 @@ export const Seo = ({
   const { asPath } = useRouter();
   return (
     <Head>
-      <title>{title} · John Ugbe</title>
+      <title>{`${title} · John Ugbe`}</title>
       <meta name="description" content={description} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/favicon.svg" />

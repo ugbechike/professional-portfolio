@@ -1,6 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 const Document = () => (
-  <Html lang="en" data-theme="dark">
+  <Html lang="en" data-theme="dark" data-scroll-behavior="smooth">
     <Head>
       <script
         dangerouslySetInnerHTML={{

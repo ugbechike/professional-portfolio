@@ -41,6 +41,13 @@ const Home = ({
           <a className="text-link" href={profile.links[0].url}>
             GitHub <ArrowUpRight size={16} />
           </a>
+          {profile.links
+            .filter((link) => link.label === 'LinkedIn')
+            .map((link) => (
+              <a className="text-link" href={link.url} key={link.url}>
+                LinkedIn <ArrowUpRight size={16} />
+              </a>
+            ))}
           <a className="text-link hero-contact" href="#contact">
             Get in touch <ArrowDown size={16} />
           </a>
