@@ -1,0 +1,64 @@
+[
+  {
+    "id": "devmirror",
+    "slug": "devmirror",
+    "title": "DevMirror",
+    "summary": "A developer analytics experiment using GitHub OAuth to retrieve pull request diffs and analyze developer contributions over time.",
+    "status": "Experiment",
+    "featured": true,
+    "visibility": "public",
+    "stack": [],
+    "links": [
+      {
+        "label": "npm package",
+        "url": "https://www.npmjs.com/package/devmirror"
+      }
+    ],
+    "technicalNotes": [],
+    "images": []
+  },
+  {
+    "id": "snapswap",
+    "slug": "snapswap",
+    "title": "SnapSwap",
+    "summary": "A personal web project.",
+    "status": "Live",
+    "featured": true,
+    "visibility": "public",
+    "stack": [],
+    "links": [
+      {
+        "label": "Visit project",
+        "url": "https://snap-swap-web.vercel.app/"
+      }
+    ],
+    "technicalNotes": [],
+    "images": []
+  },
+  {
+    "id": "buddy",
+    "slug": "buddy",
+    "title": "Buddy",
+    "summary": "A voice-first AI learning companion exploring conversational learning, memory, progress tracking, and proactive assistance.",
+    "status": "Prototype",
+    "featured": true,
+    "visibility": "public",
+    "stack": [],
+    "links": [],
+    "technicalNotes": [],
+    "images": []
+  },
+  {
+    "id": "republic",
+    "slug": "republic",
+    "title": "REPUBLIC",
+    "summary": "A five-minute multiplayer geopolitical negotiation game where players negotiate deals and compete for public support and global influence.",
+    "status": "Prototype",
+    "featured": true,
+    "visibility": "public",
+    "stack": [],
+    "links": [],
+    "technicalNotes": [],
+    "images": []
+  }
+]

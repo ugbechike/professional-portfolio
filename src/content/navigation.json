@@ -1,0 +1,18 @@
+[
+  {
+    "label": "Work",
+    "href": "/work"
+  },
+  {
+    "label": "Playground",
+    "href": "/playground"
+  },
+  {
+    "label": "Notes",
+    "href": "/notes"
+  },
+  {
+    "label": "About",
+    "href": "/about"
+  }
+]

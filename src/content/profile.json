@@ -1,0 +1,24 @@
+{
+  "name": "John Ugbe",
+  "role": "Senior Software Engineer",
+  "headline": "I build products that work beyond the demo.",
+  "summary": "Senior software engineer building production web, mobile, fintech, AI, and streaming experiences. From first implementation to complex integrations and reliable delivery.",
+  "bio": "I enjoy the space where product ideas meet real engineering constraints. I work alongside product, design, and backend teams to take features from requirements through implementation and delivery. My experience spans web, mobile, and connected devices; my approach stays grounded in curiosity, ownership, and practical problem-solving.",
+  "years": "8+",
+  "links": [
+    {
+      "label": "GitHub",
+      "url": "https://github.com/ugbechike"
+    }
+  ],
+  "capabilities": [
+    "Product engineering",
+    "Authentication & sessions",
+    "Financial & payment integrations",
+    "Web3 & wallet integrations",
+    "Cross-platform engineering",
+    "Media & streaming",
+    "AI integrations & developer tooling",
+    "Performance & reliability"
+  ]
+}
