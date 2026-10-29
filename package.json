@@ -10,7 +10,9 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "test": "node --import tsx --test tests/*.test.ts"
+    "test": "node --import tsx --test tests/*.test.ts",
+    "prebuild": "node --import tsx scripts/generate-seo.ts",
+    "predev": "node --import tsx scripts/generate-seo.ts"
   },
   "engines": {
     "node": ">=22.13.0"
