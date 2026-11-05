@@ -37,7 +37,7 @@ Preview deployments emit a robots disallow rule. Set the final origin and redepl
 
 ## Edit content
 
-Update `src/content/*.json`; content is validated at build time. `projects.json` contains the ten professional engagements; `playground.json` contains four personal projects. Set `visibility` to `draft` or `private` to exclude records from public pages and the sitemap. New public slugs automatically receive detail pages on the next build. Set `featured` for homepage inclusion.
+Update `src/content/*.json`; content is validated at build time. `projects.json` contains the nine professional engagements; `playground.json` contains four personal projects. Set `visibility` to `draft` or `private` to exclude records from public pages and the sitemap. New public slugs automatically receive detail pages on the next build. Set `featured` for homepage inclusion.
 
 `profile.json` owns contact details and social links. Email, GitHub, LinkedIn, and X are configured using the supplied contact details. The experience collection is empty because no employer/date history was supplied. Notes remain empty until a real article is ready.
 

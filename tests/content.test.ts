@@ -11,7 +11,7 @@ import {
 } from '@/modules/content/schemas/content';
 test('all supplied content validates and resolves through the repository', async () => {
   const projects = await jsonRepository.getProjects();
-  assert.equal(projects.length, 10);
+  assert.equal(projects.length, 9);
   for (const project of projects)
     assert.deepEqual(
       await jsonRepository.getProjectBySlug(project.slug),

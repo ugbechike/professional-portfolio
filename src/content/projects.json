@@ -350,39 +350,6 @@
     }
   },
   {
-    "id": "ogenetv",
-    "slug": "ogenetv",
-    "title": "Ogenetv",
-    "category": ["Streaming", "Web"],
-    "summary": "A digital movie rental platform, from architecture to deployment.",
-    "role": "Frontend owner",
-    "ownership": "Frontend owner",
-    "stack": ["Paystack", "Web"],
-    "status": "Published",
-    "visibility": "public",
-    "featured": false,
-    "challenges": [],
-    "contributions": [
-      "Owned frontend delivery from architecture through deployment.",
-      "Delivered authentication and Paystack integrations."
-    ],
-    "decisions": [],
-    "outcomes": [],
-    "metrics": [],
-    "links": [],
-    "images": [
-      {
-        "src": "/images/projects/ogenetv.svg",
-        "alt": "Abstract editorial artwork for Ogenetv; not a product screenshot",
-        "width": 1000,
-        "height": 680
-      }
-    ],
-    "caseStudy": {
-      "sections": []
-    }
-  },
-  {
     "id": "ihlad",
     "slug": "ihlad",
     "title": "IHLAD",

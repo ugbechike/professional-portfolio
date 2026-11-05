@@ -23,7 +23,7 @@ const Work = ({
       <Seo title="Selected work" />
       <div className="shell">
         <section className="page-hero">
-          <div className="eyebrow">PROFESSIONAL ENGAGEMENTS / 01—10</div>
+          <div className="eyebrow">PROFESSIONAL ENGAGEMENTS / 01—09</div>
           <h1>
             Real products.
             <br />
