@@ -17,21 +17,17 @@ const Playground = ({
   ...site
 }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <Layout {...site}>
-    <Seo title="The playground" />
+    <Seo title="Engineering Lab" />
     <div className="shell">
       <section className="page-hero">
-        <div className="eyebrow">SMALL BETS / OPEN QUESTIONS / SIDE QUESTS</div>
-        <h1>
-          A little curiosity.
-          <br />
-          <span className="serif">A lot of building.</span>
-        </h1>
+        <div className="eyebrow">{'// lab'}</div>
+        <h1>Engineering Lab</h1>
         <p>
           Personal projects and experiments. A place to follow an idea, learn a
           new technology, and see what happens.
         </p>
       </section>
-      <section className="play-grid directory" aria-label="Personal projects">
+      <section className="directory" aria-label="Personal projects">
         {projects.map((project) => (
           <PlaygroundCard key={project.id} project={project} />
         ))}

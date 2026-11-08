@@ -41,7 +41,7 @@ const PlaygroundDetail = ({
     <article className="shell directory">
       <header className="page-hero">
         <Link className="detail-back" href="/playground">
-          <ArrowLeft size={15} /> The playground
+          <ArrowLeft size={15} /> Engineering Lab
         </Link>
         <div className="eyebrow">
           PERSONAL PROJECT / {project.status.toUpperCase()}
@@ -72,9 +72,17 @@ const PlaygroundDetail = ({
         </div>
       </header>
       <div className="prose">
-        {project.images.map((image) => (
-          <Image key={image.src} {...image} alt={image.alt} />
-        ))}
+        {!project.caseStudy?.sections.length &&
+          !project.technicalNotes.length && (
+            <p>Project notes are not yet published.</p>
+          )}
+        {project.images
+          .filter(
+            (image) => image.kind === 'screenshot' || image.kind === 'product',
+          )
+          .map((image) => (
+            <Image key={image.src} {...image} alt={image.alt} />
+          ))}
         {project.caseStudy?.sections.map((section) => (
           <section key={section.title}>
             <h2>{section.title}</h2>

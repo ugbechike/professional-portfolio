@@ -1,46 +1,71 @@
 import type { InferGetStaticPropsType } from 'next';
+import Link from 'next/link';
 import { Layout } from '@/components/layout/layout';
 import { Seo } from '@/components/ui/seo';
-import { getSiteContent } from '@/modules/content/services/content';
-export const getStaticProps = async () => ({ props: await getSiteContent() });
-const About = (site: InferGetStaticPropsType<typeof getStaticProps>) => (
+import {
+  contentRepository,
+  getSiteContent,
+} from '@/modules/content/services/content';
+export const getStaticProps = async () => ({
+  props: {
+    ...(await getSiteContent()),
+    experiences: await contentRepository.getExperiences(),
+  },
+});
+const About = ({
+  experiences,
+  ...site
+}: InferGetStaticPropsType<typeof getStaticProps>) => (
   <Layout {...site}>
-    <Seo title="About John" />
+    <Seo title="About John" description={site.profile.bio} />
     <div className="shell">
-      <section className="page-hero">
-        <div className="eyebrow">ENGINEER / COLLABORATOR / CURIOUS HUMAN</div>
-        <h1>
-          Hi, I’m John.
-          <br />I like to <span className="serif">figure it out.</span>
-        </h1>
+      <header className="page-hero">
+        <div className="eyebrow">{'// about'}</div>
+        <h1>Hi, I’m John.</h1>
+      </header>
+      <div className="portrait-pending">Portrait to follow.</div>
+      <div className="prose">
+        <p>{site.profile.bio}</p>
+      </div>
+      {experiences.length > 0 && (
+        <section className="section">
+          <h2 className="section-label">{'// experience'}</h2>
+          <ul className="timeline">
+            {experiences.map((item) => (
+              <li key={item.id}>
+                <span>
+                  {item.startDate && (
+                    <time dateTime={item.startDate}>
+                      {item.startDate.slice(0, 4)}
+                      {item.endDate && ` – ${item.endDate.slice(0, 4)}`}
+                    </time>
+                  )}
+                </span>
+                <div>
+                  <h3>{item.role}</h3>
+                  <p>{item.company}</p>
+                  <p>{item.summary}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+      <section className="section">
+        <h2 className="section-label">{'// areas of experience'}</h2>
+        <ul className="capabilities">
+          {site.profile.capabilities.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+        <Link className="text-link section-link" href="/work">
+          Explore my work →
+        </Link>
       </section>
-      <section className="about-layout">
-        <div className="monogram" aria-label="John Ugbe monogram">
-          ju<span>ALWAYS LEARNING. ALWAYS BUILDING.</span>
-        </div>
-        <div className="about-copy">
-          <h2>Grounded in the work.</h2>
-          <p>{site.profile.bio}</p>
-          <p>
-            Over 8+ years, I’ve worked on products spanning fintech, DeFi, AI,
-            streaming, and commerce. That has meant moving between React web
-            applications, React Native mobile experiences, and connected-device
-            development.
-          </p>
-          <h2>Ownership beyond the interface.</h2>
-          <p>
-            Client-embedded engineering means understanding the product,
-            collaborating across disciplines, and seeing the work through.
-            Authentication, payments, media playback, and application lifecycles
-            are part of that responsibility.
-          </p>
-          <h2>Curiosity is part of the practice.</h2>
-          <p>
-            Personal projects give me room to explore: developer analytics,
-            conversational learning, multiplayer games, and new ways to build. I
-            learn by putting ideas into working software.
-          </p>
-        </div>
+      <section className="section">
+        <Link className="text-link" href="/contact">
+          Get in touch →
+        </Link>
       </section>
     </div>
   </Layout>

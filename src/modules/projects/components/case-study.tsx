@@ -32,43 +32,33 @@ export const CaseStudy = ({ project }: { project: Project }) => (
           <div className="eyebrow">ROLE & OWNERSHIP</div>
           <p>{project.role}</p>
         </div>
-        <div>
-          <div className="eyebrow">TECHNOLOGIES & TOOLS</div>
-          <div className="tags">
-            {project.stack.map((tech) => (
-              <span key={tech}>{tech}</span>
-            ))}
+        {project.stack.length > 0 && (
+          <div>
+            <div className="eyebrow">TECHNOLOGIES & TOOLS</div>
+            <div className="tags">
+              {project.stack.map((tech) => (
+                <span key={tech}>{tech}</span>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </header>
-    {project.images[0] && (
-      <Image
-        className="detail-cover"
-        src={project.images[0].src}
-        alt={project.images[0].alt}
-        width={project.images[0].width}
-        height={project.images[0].height}
-        priority
-      />
-    )}
     <div className="detail-layout">
-      <aside className="detail-aside">
-        <div className="eyebrow">ENGAGEMENT NOTES</div>
-        <p>{project.role}</p>
-        {project.startDate && (
-          <p>
-            {project.startDate} — {project.endDate || 'Present'}
-          </p>
-        )}
-        <p>Project artwork is an abstract illustration.</p>
-      </aside>
       <div className="prose">
+        {!project.caseStudy.sections.length && (
+          <section>
+            <p>
+              Full case study not yet published. The engagement details below
+              reflect the work shared so far.
+            </p>
+          </section>
+        )}
         {project.caseStudy.sections.map((section) => (
           <section key={section.title}>
             <h2>{section.title}</h2>
             <p>{section.body}</p>
-            {section.image && (
+            {section.image && section.image.kind !== 'illustration' && (
               <Image
                 src={section.image.src}
                 alt={section.image.alt}

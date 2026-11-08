@@ -13,6 +13,7 @@ const generate = async () => {
     '/playground',
     '/notes',
     '/about',
+    '/contact',
     ...projects.map(({ slug }) => `/work/${slug}`),
     ...playground.map(({ slug }) => `/playground/${slug}`),
     ...notes.map(({ slug }) => `/notes/${slug}`),
