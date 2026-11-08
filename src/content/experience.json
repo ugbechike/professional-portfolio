@@ -1,1 +1,46 @@
-[]
+[
+  {
+    "id": "lazer-technologies",
+    "company": "Lazer Technologies",
+    "role": "Senior Software Engineer",
+    "summary": "Embedded within client engineering teams to deliver production applications across fintech, streaming, AI, commerce, and mobile platforms. Worked with engineers, product managers, and stakeholders on product requirements, architecture, implementation, and delivery.",
+    "startDate": "2021-09-01",
+    "projectIds": []
+  },
+  {
+    "id": "global-villages",
+    "company": "Global Villages",
+    "role": "Senior Software Engineer",
+    "summary": "Developed shared web and mobile marketplace experiences, including product discovery, authentication, and payment integrations.",
+    "startDate": "2021-02-01",
+    "projectIds": [],
+    "endDate": "2021-08-01"
+  },
+  {
+    "id": "mart",
+    "company": "Mart",
+    "role": "Software Engineer",
+    "summary": "Built React Native commerce and fulfillment features, including order recommendations, guest checkout, and mobile workflows for order processing.",
+    "startDate": "2019-07-01",
+    "projectIds": [],
+    "endDate": "2021-01-01"
+  },
+  {
+    "id": "tenece",
+    "company": "Tenece Professional Services",
+    "role": "Software Engineer",
+    "summary": "Developed mobile and web features for legal and school management applications, including portal-building experiences and payment-related improvements.",
+    "startDate": "2019-01-01",
+    "projectIds": [],
+    "endDate": "2019-07-01"
+  },
+  {
+    "id": "genesys-tech-hub",
+    "company": "Genesys Tech Hub",
+    "role": "Front End Developer",
+    "summary": "Owned frontend implementation of Ogenetv, a digital movie rental application, including authentication, purchasing, and integration with backend services.",
+    "startDate": "2018-05-01",
+    "projectIds": [],
+    "endDate": "2019-12-01"
+  }
+]
