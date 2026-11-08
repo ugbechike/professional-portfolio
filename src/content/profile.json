@@ -2,7 +2,7 @@
   "name": "John Ugbe",
   "role": "Senior Software Engineer",
   "headline": "Software engineering, from concept to delivery.",
-  "summary": "I work with teams to shape product ideas, define scope, make technical decisions, and build software aligned with business goals.",
+  "summary": "I work with teams to understand product goals, refine requirements, make technical decisions, and deliver software that solves meaningful problems.",
   "bio": "I enjoy the space where product ideas meet real engineering constraints. I work alongside product, design, and backend teams to take features from requirements through implementation and delivery. My experience spans web, mobile, and connected devices; my approach stays grounded in curiosity, ownership, and practical problem-solving.",
   "years": "8+",
   "links": [
@@ -29,5 +29,6 @@
     "AI integrations & developer tooling",
     "Performance & reliability"
   ],
-  "email": "engr.ugbechike@gmail.com"
+  "email": "engr.ugbechike@gmail.com",
+  "location": "Ontario, Canada"
 }

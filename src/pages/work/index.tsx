@@ -8,7 +8,7 @@ import {
 } from '@/modules/content/services/content';
 import { useProjects } from '@/modules/projects/hooks/use-projects';
 const workDescription =
-  "A collection of products and client engagements I've contributed to, from early development through production delivery.";
+  "A collection of client engagements and products I've contributed to across different industries and stages of development.";
 
 export const getStaticProps = async () => ({
   props: {
@@ -26,7 +26,7 @@ const Work = ({
       <Seo title="Selected Work" description={workDescription} />
       <div className="shell work-index">
         <section className="page-hero work-index-hero">
-          <div className="eyebrow">Professional engagements</div>
+          <div className="eyebrow">{'// work'}</div>
           <h1>Selected Work</h1>
           <p>{workDescription}</p>
         </section>
@@ -49,7 +49,11 @@ const Work = ({
           <p className="directory-count" aria-live="polite">
             {directory.filtered.length} of {projects.length} engagements
           </p>
-          <ProjectDirectory projects={directory.filtered} headingLevel="h2" />
+          <ProjectDirectory
+            projects={directory.filtered}
+            headingLevel="h2"
+            detailed
+          />
         </section>
       </div>
     </Layout>

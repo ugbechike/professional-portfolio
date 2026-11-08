@@ -18,6 +18,7 @@ export const getHomeContent = async () => {
   ]);
   return {
     ...site,
+    projectCount: projects.length,
     projects: projects.filter((item) => item.featured),
     playground: playground.filter((item) => item.featured),
     notes,

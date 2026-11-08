@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
-const themeColor = (value: string) => (value === 'light' ? '#F3F2EC' : '#1B1D1C');
+const themeColor = (value: string) =>
+  value === 'light' ? '#F2EFE8' : '#1B1D1C';
 const applyThemeColor = (value: string) => {
   document
     .querySelector('meta[name="theme-color"]')
@@ -25,7 +26,7 @@ export const useNavigation = () => {
       document.getElementById('menu-toggle')?.focus();
     };
     const onResize = () => {
-      if (window.innerWidth > 960) setOpen(false);
+      if (window.innerWidth > 640) setOpen(false);
     };
     window.addEventListener('keydown', onKey);
     window.addEventListener('resize', onResize);
@@ -48,9 +49,9 @@ export const useNavigation = () => {
   };
 };
 export const useTheme = () => {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState('light');
   useEffect(() => {
-    const current = document.documentElement.dataset.theme || 'dark';
+    const current = document.documentElement.dataset.theme || 'light';
     queueMicrotask(() => {
       setTheme(current);
       applyThemeColor(current);

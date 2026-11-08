@@ -14,10 +14,10 @@ export const Reveal = ({
     <motion.div
       className={className}
       initial={false}
-      whileInView={reduced ? undefined : { y: [14, 0], opacity: [0.86, 1] }}
+      whileInView={reduced ? undefined : { y: [6, 0], opacity: [0.86, 1] }}
       viewport={{ once: true, amount: 0.12 }}
       transition={{
-        duration: 0.55,
+        duration: 0.3,
         delay,
         ease: [0.22, 1, 0.36, 1],
       }}

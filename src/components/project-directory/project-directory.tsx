@@ -1,14 +1,14 @@
 import Link from 'next/link';
-import { ArrowUpRight } from 'lucide-react';
 import type { Project } from '@/modules/content/types/content';
 import { Reveal } from '@/components/animation/reveal';
-
 export const ProjectDirectory = ({
   projects,
   headingLevel = 'h3',
+  detailed = false,
 }: {
   projects: Project[];
   headingLevel?: 'h2' | 'h3';
+  detailed?: boolean;
 }) => {
   const Heading = headingLevel;
   return (
@@ -16,33 +16,49 @@ export const ProjectDirectory = ({
       {projects.map((project) => (
         <li key={project.id}>
           <Reveal>
-            <Link
-              className="project-directory-row"
-              href={`/work/${project.slug}`}
-              aria-labelledby={`project-${project.id}-title`}
-              aria-describedby={`project-${project.id}-summary`}
+            <article
+              className={
+                project.startDate ? 'project-entry has-date' : 'project-entry'
+              }
             >
-              <Heading
-                id={`project-${project.id}-title`}
-                className="project-directory-title"
-              >
-                {project.title}
-              </Heading>
-              <p
-                id={`project-${project.id}-summary`}
-                className="project-directory-summary"
-              >
-                {project.summary}
-              </p>
-              <p className="project-directory-category">
-                {project.category.join(' · ')}
-              </p>
-              <ArrowUpRight
-                className="project-directory-arrow"
-                size={19}
-                aria-hidden="true"
-              />
-            </Link>
+              {project.startDate && (
+                <time dateTime={project.startDate}>
+                  {project.startDate.slice(0, 4)}
+                  {project.endDate && ` – ${project.endDate.slice(0, 4)}`}
+                </time>
+              )}
+              <div>
+                <Heading className="project-title">
+                  <Link href={`/work/${project.slug}`}>
+                    {project.title} <span aria-hidden="true">↗</span>
+                  </Link>
+                </Heading>
+                <p className="project-summary">{project.summary}</p>
+                <p className="project-meta">
+                  {project.category.join(' · ')}
+                  {project.status === 'Current' && ' · Current'}
+                </p>
+                {detailed && (
+                  <>
+                    <p className="project-role">{project.role}</p>
+                    {project.contributions.length > 0 && (
+                      <ul className="contribution-preview">
+                        {project.contributions.slice(0, 2).map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </>
+                )}
+                {project.stack.length > 0 && (
+                  <div className="tags">
+                    {project.stack.slice(0, 4).map((tech) => (
+                      <span key={tech}>{tech}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </article>
           </Reveal>
         </li>
       ))}

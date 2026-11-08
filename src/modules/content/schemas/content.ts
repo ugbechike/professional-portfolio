@@ -36,6 +36,7 @@ export const profileSchema = z.object({
   summary: z.string(),
   bio: z.string(),
   years: z.string(),
+  location: z.string().optional(),
   email: z.email().optional(),
   links: z.array(externalLinkSchema),
   capabilities: z.array(z.string()),
