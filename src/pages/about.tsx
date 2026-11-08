@@ -1,15 +1,16 @@
 import type { InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
+import { ExperienceList } from '@/components/experience/experience-list';
 import { Layout } from '@/components/layout/layout';
 import { Seo } from '@/components/ui/seo';
 import {
-  contentRepository,
+  getExperienceContent,
   getSiteContent,
 } from '@/modules/content/services/content';
 export const getStaticProps = async () => ({
   props: {
     ...(await getSiteContent()),
-    experiences: await contentRepository.getExperiences(),
+    experiences: await getExperienceContent(),
   },
 });
 const About = ({
@@ -30,25 +31,7 @@ const About = ({
       {experiences.length > 0 && (
         <section className="section">
           <h2 className="section-label">{'// experience'}</h2>
-          <ul className="timeline">
-            {experiences.map((item) => (
-              <li key={item.id}>
-                <span>
-                  {item.startDate && (
-                    <time dateTime={item.startDate}>
-                      {item.startDate.slice(0, 4)}
-                      {item.endDate && ` – ${item.endDate.slice(0, 4)}`}
-                    </time>
-                  )}
-                </span>
-                <div>
-                  <h3>{item.role}</h3>
-                  <p>{item.company}</p>
-                  <p>{item.summary}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
+          <ExperienceList experiences={experiences} />
         </section>
       )}
       <section className="section">

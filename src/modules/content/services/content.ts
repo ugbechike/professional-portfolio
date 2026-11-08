@@ -9,15 +9,21 @@ export const getSiteContent = async () => {
   ]);
   return { profile, navigation };
 };
+export const getExperienceContent = async () =>
+  (await contentRepository.getExperiences()).sort((a, b) =>
+    (b.startDate ?? '').localeCompare(a.startDate ?? ''),
+  );
 export const getHomeContent = async () => {
-  const [site, projects, playground, notes] = await Promise.all([
+  const [site, projects, playground, notes, experiences] = await Promise.all([
     getSiteContent(),
     contentRepository.getProjects(),
     contentRepository.getPlaygroundProjects(),
     contentRepository.getNotes(),
+    getExperienceContent(),
   ]);
   return {
     ...site,
+    experiences: experiences.slice(0, 3),
     projectCount: projects.length,
     projects: projects.filter((item) => item.featured),
     playground: playground.filter((item) => item.featured),

@@ -638,3 +638,38 @@ time {
     transition: none !important;
   }
 }
+
+.experience-dates {
+  font: 12px/1.8 var(--display);
+  color: var(--muted);
+}
+.timeline {
+  margin: 0;
+}
+.timeline li {
+  grid-template-columns: 165px minmax(0, 1fr);
+}
+.timeline-preview li {
+  grid-template-columns: 125px minmax(0, 1fr);
+  margin-bottom: 22px;
+}
+.timeline h3 {
+  font-family: var(--body);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.65;
+}
+.experience-company {
+  color: var(--secondary);
+  font-weight: 400;
+}
+.timeline p.experience-company {
+  font: 13px/1.8 var(--display);
+  margin-top: 0;
+}
+@media (max-width: 640px) {
+  .timeline li {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}

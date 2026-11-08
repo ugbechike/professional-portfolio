@@ -49,3 +49,13 @@ Pages Router, strict TypeScript, getStaticProps/getStaticPaths, ContentRepositor
 ## Remaining content work
 
 Provide John's actual photo for a future ink portrait, an actual resume asset, and verified employment records/dates. No project dates currently exist, so none are displayed. Seven professional case studies and the lab projects need fuller source content; no narratives were invented. Writing remains empty. The repository's existing social preview image is retained; a matching paper-style social asset can be supplied separately.
+
+## Hero and employment update — November 8, 2026
+
+The approved hero is now “I build thoughtful products and reliable systems.” The complete supporting paragraph lives in profile.json and also supplies homepage metadata.
+
+Five employment records supplied in the user's resume-derived brief now populate experience.json: Lazer Technologies, Global Villages, Mart, Tenece Professional Services and Genesys Tech Hub. This resolves the employment-history gap noted above. Their overlapping periods are preserved. Because the unchanged schema uses ISO calendar dates, month-precision source dates are stored with day 01 as a normalization convention, not an asserted day of employment. The UI and semantic time values expose only month/year precision. Omitted endDate denotes the explicitly current Lazer role. Locations are not added to the existing experience schema for this task.
+
+The shared ExperienceList renders a compact three-role homepage preview after Selected Work and the full five-role About timeline with summaries. getExperienceContent reads through ContentRepository and sorts by descending start date; homepage selection occurs in getHomeContent. No employment data is duplicated in presentation components. Desktop uses a narrow muted date column and a role/company column; rows stack below 640px. No new decoration, cards, borders or animation is introduced.
+
+Validation: typecheck, lint, four tests and the production build pass. The new content test protects all five source periods, including overlaps, and the three-record homepage selection. Browser checks at 320, 375, 768, 1024 and 1440px confirm three homepage rows, five About rows, correct displayed ranges and no horizontal overflow. The More about me link reaches About.

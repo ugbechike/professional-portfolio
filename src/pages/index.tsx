@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Layout } from '@/components/layout/layout';
 import { Seo } from '@/components/ui/seo';
 import { Reveal } from '@/components/animation/reveal';
+import { ExperienceList } from '@/components/experience/experience-list';
 import { ProjectDirectory } from '@/components/project-directory/project-directory';
 import { getHomeContent } from '@/modules/content/services/content';
 export const getStaticProps = async () => ({ props: await getHomeContent() });
@@ -11,6 +12,7 @@ const Home = ({
   navigation,
   projects,
   projectCount,
+  experiences,
 }: InferGetStaticPropsType<typeof getStaticProps>) => (
   <Layout profile={profile} navigation={navigation}>
     <Seo
@@ -49,14 +51,20 @@ const Home = ({
           All {projectCount} projects →
         </Link>
       </section>
+      <section className="section" aria-labelledby="experience-preview">
+        <h2 className="section-label" id="experience-preview">
+          {'// experience'}
+        </h2>
+        <ExperienceList experiences={experiences} compact />
+        <Link className="text-link section-link" href="/about">
+          More about me →
+        </Link>
+      </section>
       <section className="section" aria-labelledby="about-preview">
         <h2 className="section-label" id="about-preview">
           {'// about'}
         </h2>
         <p>{profile.bio}</p>
-        <Link className="text-link section-link" href="/about">
-          More about me →
-        </Link>
       </section>
     </div>
   </Layout>
