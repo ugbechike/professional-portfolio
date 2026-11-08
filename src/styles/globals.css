@@ -255,73 +255,6 @@ h2 {
   flex-shrink: 0;
   margin-top: 1.6rem;
 }
-.project-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 52px 28px;
-}
-.project-art {
-  aspect-ratio: 1.55;
-  display: block;
-  overflow: hidden;
-  position: relative;
-  background: var(--surface);
-  border-radius: 5px;
-}
-.project-art img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s;
-}
-.project-card:hover .project-art img {
-  transform: scale(1.035);
-}
-.art-label {
-  position: absolute;
-  left: 20px;
-  top: 18px;
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #f1f0e9;
-}
-.art-arrow {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  border: 1px solid #ffffff40;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  color: #fff;
-}
-.project-info {
-  padding-top: 22px;
-}
-.project-title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.project-title h3 {
-  font-size: 24px;
-  letter-spacing: -0.8px;
-}
-.project-title > svg {
-  color: var(--muted);
-}
-.project-info p {
-  font-size: 13px;
-  margin-top: 8px;
-}
-.project-info .project-role {
-  font-size: 0.8125rem;
-  color: var(--muted);
-  margin-top: 13px;
-}
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -738,13 +671,6 @@ h2 {
   .section-heading > .text-link {
     margin-top: 0;
   }
-  .project-grid {
-    gap: 35px;
-    grid-template-columns: 1fr;
-  }
-  .project-title h3 {
-    font-size: 1.4rem;
-  }
   .play-grid {
     grid-template-columns: 1fr;
     gap: 15px;
@@ -822,39 +748,4 @@ h2 {
     animation: none !important;
     transition: none !important;
   }
-}
-.cover-fallback {
-  height: 100%;
-  display: grid;
-  place-items: center;
-  font-size: 40px;
-  font-family: var(--display);
-  color: var(--accent);
-}
-
-.card-contributions {
-  padding-left: 14px;
-  margin: 13px 0 0;
-  color: var(--muted);
-  font-size: 0.8125rem;
-  line-height: 1.75;
-}
-.card-contributions li {
-  padding-left: 3px;
-  margin-top: 4px;
-}
-.card-impact {
-  border-left: 2px solid var(--accent);
-  padding-left: 12px;
-  margin-top: 17px;
-}
-.card-impact strong {
-  font-weight: 500;
-  font-size: 12px;
-  color: var(--accent);
-}
-.card-impact p {
-  font-size: 0.75rem;
-  line-height: 1.7;
-  margin-top: 4px;
 }

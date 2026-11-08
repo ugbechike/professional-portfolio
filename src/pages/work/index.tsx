@@ -1,12 +1,15 @@
 import type { InferGetStaticPropsType } from 'next';
 import { Layout } from '@/components/layout/layout';
 import { Seo } from '@/components/ui/seo';
-import { ProjectCard } from '@/components/project-card/project-card';
+import { ProjectDirectory } from '@/components/project-directory/project-directory';
 import {
   contentRepository,
   getSiteContent,
 } from '@/modules/content/services/content';
 import { useProjects } from '@/modules/projects/hooks/use-projects';
+const workDescription =
+  "A collection of products and client engagements I've contributed to, from early development through production delivery.";
+
 export const getStaticProps = async () => ({
   props: {
     ...(await getSiteContent()),
@@ -20,19 +23,12 @@ const Work = ({
   const directory = useProjects(projects);
   return (
     <Layout {...site}>
-      <Seo title="Selected work" />
-      <div className="shell">
-        <section className="page-hero">
-          <div className="eyebrow">PROFESSIONAL ENGAGEMENTS / 01—09</div>
-          <h1>
-            Real products.
-            <br />
-            <span className="serif">Real engineering.</span>
-          </h1>
-          <p>
-            A selection of client engagements across streaming, finance, AI,
-            mobile, and commerce. The work behind the experience.
-          </p>
+      <Seo title="Selected Work" description={workDescription} />
+      <div className="shell work-index">
+        <section className="page-hero work-index-hero">
+          <div className="eyebrow">Professional engagements</div>
+          <h1>Selected Work</h1>
+          <p>{workDescription}</p>
         </section>
         <section className="directory" aria-label="Project directory">
           <div
@@ -51,14 +47,9 @@ const Work = ({
             ))}
           </div>
           <p className="directory-count" aria-live="polite">
-            {directory.filtered.length}{' '}
-            {directory.filtered.length === 1 ? 'engagement' : 'engagements'}
+            {directory.filtered.length} of {projects.length} engagements
           </p>
-          <div className="project-grid">
-            {directory.filtered.map((project, index) => (
-              <ProjectCard key={project.id} project={project} index={index} />
-            ))}
-          </div>
+          <ProjectDirectory projects={directory.filtered} headingLevel="h2" />
         </section>
       </div>
     </Layout>

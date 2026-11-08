@@ -30,7 +30,7 @@
   text-transform: uppercase;
 }
 .home-hero h1 {
-  max-width: 7.6em;
+  max-width: 12em;
   font-size: clamp(2.55rem, 5.6vw, 5.15rem);
   font-weight: 500;
   letter-spacing: -0.045em;
@@ -144,79 +144,12 @@
 .home-about {
   border-top: 1px solid var(--line);
 }
-.home-work-list,
 .home-capabilities,
 .home-lab-list,
 .home-writing-list {
   margin: 0;
   padding: 0;
   list-style: none;
-}
-.home-work-list {
-  border-top: 1px solid var(--line);
-}
-.home-work-row {
-  display: grid;
-  grid-template-columns: minmax(12rem, 0.85fr) minmax(0, 1.15fr) auto;
-  grid-template-areas:
-    'title category arrow'
-    'summary summary arrow';
-  column-gap: 28px;
-  row-gap: 6px;
-  align-items: center;
-  min-height: 44px;
-  padding: 18px 0 20px;
-  border-bottom: 1px solid var(--line);
-  color: inherit;
-}
-.home-work-row[data-media='true'] {
-  grid-template-columns: 7.25rem minmax(11rem, 0.8fr) minmax(0, 1.15fr) auto;
-  grid-template-areas:
-    'media title category arrow'
-    'media summary summary arrow';
-}
-.home-work-media {
-  position: relative;
-  grid-area: media;
-  width: 7.25rem;
-  height: 4.75rem;
-  margin: 0;
-  overflow: hidden;
-  background: var(--surface);
-}
-.home-work-media img {
-  object-fit: cover;
-}
-.home-work-row h3 {
-  grid-area: title;
-  margin: 0;
-  font-size: clamp(1.3rem, 1.7vw, 1.6rem);
-  font-weight: 500;
-  letter-spacing: -0.03em;
-  line-height: 1.15;
-}
-.home-work-category {
-  grid-area: category;
-  margin: 0;
-  justify-self: end;
-  color: var(--muted);
-  font-size: 0.8125rem;
-  letter-spacing: 0.12em;
-  line-height: 1.4;
-  text-align: right;
-  text-transform: uppercase;
-}
-.home-work-summary {
-  grid-area: summary;
-  max-width: 46rem;
-  margin: 0;
-  color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.5;
-}
-.home-work-arrow {
-  grid-area: arrow;
-  color: var(--muted);
 }
 .home-index {
   display: block;
@@ -372,27 +305,6 @@
 .home-about .text-link {
   margin-top: 22px;
 }
-@media (prefers-reduced-motion: no-preference) {
-  .home-work-row,
-  .home-work-arrow {
-    transition:
-      color 0.25s ease,
-      transform 0.25s ease;
-  }
-  .home-work-row:hover .home-work-arrow {
-    transform: translate(2px, -2px);
-  }
-  .home-work-media img {
-    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  .home-work-row:hover .home-work-media img {
-    transform: scale(1.03);
-  }
-}
-.home-work-row:hover h3,
-.home-work-row:hover .home-work-arrow {
-  color: var(--accent);
-}
 @media (prefers-reduced-motion: reduce) {
   .home-hero * {
     transform: none !important;
@@ -404,31 +316,6 @@
   .home-lab-layout,
   .home-about-layout {
     grid-template-columns: 1fr;
-  }
-  .home-work-row,
-  .home-work-row[data-media='true'] {
-    grid-template-columns: minmax(0, 1fr) auto;
-    grid-template-areas:
-      'title arrow'
-      'category category'
-      'summary summary';
-    align-items: start;
-    row-gap: 6px;
-    padding-block: 16px;
-  }
-  .home-work-row[data-media='true'] {
-    grid-template-areas:
-      'media media'
-      'title arrow'
-      'category category'
-      'summary summary';
-  }
-  .home-work-category {
-    justify-self: start;
-    text-align: left;
-  }
-  .home-work-arrow {
-    margin-top: 4px;
   }
   .home-lab .section-heading {
     margin-bottom: 8px;
