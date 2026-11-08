@@ -10,14 +10,16 @@ export const getSiteContent = async () => {
   return { profile, navigation };
 };
 export const getHomeContent = async () => {
-  const [site, projects, playground] = await Promise.all([
+  const [site, projects, playground, notes] = await Promise.all([
     getSiteContent(),
     contentRepository.getProjects(),
     contentRepository.getPlaygroundProjects(),
+    contentRepository.getNotes(),
   ]);
   return {
     ...site,
     projects: projects.filter((item) => item.featured),
-    playground: playground.filter((item) => item.featured).slice(0, 2),
+    playground: playground.filter((item) => item.featured),
+    notes,
   };
 };

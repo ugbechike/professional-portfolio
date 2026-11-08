@@ -10,6 +10,7 @@ export const mediaAssetSchema = z.object({
   alt: z.string().min(1),
   width: z.number().positive(),
   height: z.number().positive(),
+  kind: z.enum(['screenshot', 'product', 'illustration']).optional(),
 });
 export const impactMetricSchema = z.object({
   value: z.string(),

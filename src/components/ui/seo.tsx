@@ -2,8 +2,8 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { siteOrigin } from '@/config/site';
 export const Seo = ({
-  title = 'Engineering beyond the demo',
-  description = 'John Ugbe — senior software engineer building production web, mobile, fintech, AI, and streaming experiences.',
+  title = 'Senior Software Engineer',
+  description = 'John Ugbe — senior software engineer working across product discovery, scoping, architecture, and engineering.',
 }: {
   title?: string;
   description?: string;
@@ -25,7 +25,6 @@ export const Seo = ({
       />
       <meta property="og:image" content={`${siteOrigin}/images/og.png`} />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="theme-color" content="#191b19" />
     </Head>
   );
 };

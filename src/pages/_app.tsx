@@ -7,6 +7,7 @@ import '@fontsource/manrope/400.css';
 import '@fontsource/manrope/500.css';
 import '@fontsource/manrope/600.css';
 import '@/styles/globals.css';
+import '@/styles/home.css';
 const App = ({ Component, pageProps }: AppProps) => (
   <MotionConfig reducedMotion="user">
     <Component {...pageProps} />

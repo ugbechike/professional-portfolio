@@ -4,7 +4,7 @@
     "slug": "dcp-plus",
     "title": "DCP+",
     "category": ["Streaming", "Web", "Connected TV"],
-    "summary": "A streaming experience, from the first sign-in to the final frame.",
+    "summary": "Frontend delivery across web and connected TV, including authentication, Stripe purchasing, and DRM-protected playback.",
     "role": "Senior Software Engineer \u00b7 frontend & cross-platform ownership",
     "ownership": "Senior Software Engineer \u00b7 frontend & cross-platform ownership",
     "stack": [
@@ -58,7 +58,8 @@
         "src": "/images/projects/dcp-plus.svg",
         "alt": "Abstract editorial artwork for DCP+; not a product screenshot",
         "width": 1000,
-        "height": 680
+        "height": 680,
+        "kind": "illustration"
       }
     ],
     "caseStudy": {
@@ -83,7 +84,7 @@
     "slug": "concrete",
     "title": "Concrete Earn / Borrow",
     "category": ["Fintech / DeFi", "Web"],
-    "summary": "Making complex financial workflows feel clear and connected.",
+    "summary": "Led the Earn frontend and contributed to Borrow: vault deposits and withdrawals, rewards, portfolio analytics, and wallet connections.",
     "role": "Frontend lead, Concrete Earn \u00b7 contributor, Concrete Borrow",
     "ownership": "Frontend lead, Concrete Earn \u00b7 contributor, Concrete Borrow",
     "stack": [
@@ -122,7 +123,8 @@
         "src": "/images/projects/concrete.svg",
         "alt": "Abstract editorial artwork for Concrete Earn / Borrow; not a product screenshot",
         "width": 1000,
-        "height": 680
+        "height": 680,
+        "kind": "illustration"
       }
     ],
     "caseStudy": {
@@ -143,7 +145,7 @@
     "slug": "reka-ai",
     "title": "Reka AI",
     "category": ["AI", "Web"],
-    "summary": "Taking a user-facing AI feature from authentication to handoff.",
+    "summary": "Owned a user-facing feature from authentication through implementation and handoff.",
     "role": "Feature owner",
     "ownership": "Feature owner",
     "stack": [],
@@ -163,7 +165,8 @@
         "src": "/images/projects/reka-ai.svg",
         "alt": "Abstract visual for Reka AI, not a product screenshot",
         "width": 1000,
-        "height": 680
+        "height": 680,
+        "kind": "illustration"
       }
     ],
     "caseStudy": {
@@ -175,7 +178,7 @@
     "slug": "cardata",
     "title": "Cardata",
     "category": ["Mobile"],
-    "summary": "Engineering dependable experiences for a mileage-tracking app.",
+    "summary": "React Native work on app lifecycle, iOS location and motion permissions, trip tracking, and dashboard synchronization.",
     "role": "React Native engineer",
     "ownership": "React Native engineer",
     "stack": ["React Native", "iOS", "Native integrations"],
@@ -199,7 +202,8 @@
         "src": "/images/projects/cardata.svg",
         "alt": "Abstract editorial artwork for Cardata; not a product screenshot",
         "width": 1000,
-        "height": 680
+        "height": 680,
+        "kind": "illustration"
       }
     ],
     "caseStudy": {
@@ -231,7 +235,8 @@
         "src": "/images/projects/plaiday.svg",
         "alt": "Abstract editorial artwork for PlaiDay; not a product screenshot",
         "width": 1000,
-        "height": 680
+        "height": 680,
+        "kind": "illustration"
       }
     ],
     "caseStudy": {
@@ -263,7 +268,8 @@
         "src": "/images/projects/nfl-all-day.svg",
         "alt": "Abstract editorial artwork for NFL ALL DAY; not a product screenshot",
         "width": 1000,
-        "height": 680
+        "height": 680,
+        "kind": "illustration"
       }
     ],
     "caseStudy": {
@@ -302,7 +308,8 @@
         "src": "/images/projects/global-villages.svg",
         "alt": "Abstract editorial artwork for Global Villages; not a product screenshot",
         "width": 1000,
-        "height": 680
+        "height": 680,
+        "kind": "illustration"
       }
     ],
     "caseStudy": {
@@ -342,7 +349,8 @@
         "src": "/images/projects/mart.svg",
         "alt": "Abstract editorial artwork for Mart; not a product screenshot",
         "width": 1000,
-        "height": 680
+        "height": 680,
+        "kind": "illustration"
       }
     ],
     "caseStudy": {
@@ -372,7 +380,8 @@
         "src": "/images/projects/ihlad.svg",
         "alt": "Abstract editorial artwork for IHLAD; not a product screenshot",
         "width": 1000,
-        "height": 680
+        "height": 680,
+        "kind": "illustration"
       }
     ],
     "caseStudy": {
