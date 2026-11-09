@@ -143,3 +143,35 @@ test('DCP narrative preserves publication scope and evidence boundaries', async 
   const cardata = await jsonRepository.getProjectBySlug('cardata');
   assert.equal(cardata?.caseStudy.format, undefined);
 });
+
+test('Concrete and Reka narratives retain ownership, scope, and stable routes', async () => {
+  for (const slug of ['concrete', 'reka-ai']) {
+    const project = await jsonRepository.getProjectBySlug(slug);
+    assert.ok(project);
+    assert.equal(project.caseStudy.format, 'narrative');
+    assert.equal(project.caseStudy.sections.length, 7);
+    assert.equal(project.caseStudy.tableOfContents, true);
+    assert.equal(JSON.stringify(project).includes('—'), false);
+    assert.equal(
+      new Set(project.caseStudy.sections.map((section) => section.id)).size,
+      7,
+    );
+  }
+  const concrete = await jsonRepository.getProjectBySlug('concrete');
+  assert.equal(concrete?.title, 'Concrete Finance');
+  assert.match(
+    concrete?.ownership ?? '',
+    /contributor to Concrete Borrow alongside other engineers/,
+  );
+  assert.deepEqual(
+    concrete?.metrics.map((metric) => [metric.value, metric.scope]),
+    [['$616.7M', 'platform']],
+  );
+  const reka = await jsonRepository.getProjectBySlug('reka-ai');
+  assert.equal(reka?.role, 'Sole client-side engineer');
+  assert.equal(
+    reka?.caseStudy.metadata?.find((item) => item.label === 'Period')?.value,
+    '2023, beginning in March',
+  );
+  assert.deepEqual(reka?.metrics, []);
+});

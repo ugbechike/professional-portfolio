@@ -284,16 +284,17 @@
     "slug": "reka-ai",
     "title": "Reka AI",
     "category": ["AI", "Web"],
-    "summary": "Owned a user-facing feature from authentication through implementation and handoff.",
-    "role": "Feature owner",
-    "ownership": "Feature owner",
+    "summary": "Sole client-side engineer for a greenfield AI research app, integrating model fine-tuning through Python APIs and streaming conversations.",
+    "role": "Sole client-side engineer",
+    "ownership": "Sole client-side engineer on a greenfield AI research application, beginning in March 2023.",
     "stack": [],
     "status": "Published",
     "visibility": "public",
     "featured": true,
     "challenges": [],
     "contributions": [
-      "Owned a user-facing feature from authentication through implementation and handoff."
+      "Built token-based access and integrated model fine-tuning workflows with Python APIs.",
+      "Delivered streaming conversations with customized models."
     ],
     "decisions": [],
     "outcomes": [],
@@ -309,7 +310,71 @@
       }
     ],
     "caseStudy": {
-      "sections": []
+      "format": "narrative",
+      "subtitle": "Building a greenfield AI research application for model fine-tuning and streaming conversations.",
+      "metadata": [
+        {
+          "label": "Period",
+          "value": "2023, beginning in March"
+        },
+        {
+          "label": "Role",
+          "value": "Sole client-side engineer"
+        },
+        {
+          "label": "Product",
+          "value": "AI research application"
+        },
+        {
+          "label": "Integrations",
+          "value": "Python APIs for model fine-tuning and conversational interaction"
+        }
+      ],
+      "tableOfContents": true,
+      "sections": [
+        {
+          "id": "greenfield",
+          "title": "Building the application from scratch",
+          "navigationLabel": "Greenfield application",
+          "body": "In March 2023, I began work on a greenfield AI research application at Reka AI. Users could supply their own data for model fine-tuning and interact with customized models through a conversational interface. The application connected model customization with the experience of using the resulting model.\n\nAs the sole client-side engineer, I established the application and implemented its core user-facing experiences. My responsibility was to turn the capabilities exposed by the underlying services into a coherent product: access the application, provide data for customization, and carry on a conversation with a model.\n\nThat ownership sat at the client boundary. The AI models and training infrastructure belonged to the underlying services; my work made those capabilities accessible through the application and connected the workflows users needed to move between them."
+        },
+        {
+          "id": "access",
+          "title": "Making token-based access part of the experience",
+          "navigationLabel": "Token-based access",
+          "body": "Users required an assigned token to access the application. I implemented the client experience around that access model, making token-based authentication the entry point to the research workflows.\n\nAccess was part of the product journey rather than a separate piece of plumbing. Before a user could work with data or interact with a customized model, the application needed to connect their access token with the services that supported those experiences. This gave the client a clear responsibility at the start of the workflow without making it the owner of the underlying model infrastructure."
+        },
+        {
+          "id": "fine-tuning",
+          "title": "Connecting user data to model fine-tuning",
+          "navigationLabel": "Fine-tuning",
+          "body": "Model fine-tuning was central to the product. I integrated Python APIs that exposed the customization capabilities, connecting the user-facing data-supply workflow to the services responsible for fine-tuning.\n\nThe client work was about making that capability usable as a sequence of related actions. Users supplied data for customization and could then interact with the resulting models. The application had to connect those experiences so that model customization led into an actual conversation, rather than leaving fine-tuning as an isolated technical operation.\n\nThe API boundary defined what the application could request and what information it could present. Working closely with those contracts was essential to representing the research capabilities accurately. I implemented the client integrations and workflows; the Python services performed the underlying fine-tuning work."
+        },
+        {
+          "id": "streaming-conversations",
+          "title": "Presenting a conversation as it unfolds",
+          "navigationLabel": "Streaming chat",
+          "body": "I built the conversational interface through which users interacted with fine-tuned models. Responses appeared progressively as output arrived, rather than waiting for an entire response before showing it.\n\nStreaming changed the interaction from a single request followed by a finished result into an ongoing exchange. The client had to display an answer that was still arriving while maintaining the context of the conversation. Managing that ongoing conversation was part of the application’s responsibility, alongside presenting the model output itself.\n\nFor this product, the chat experience completed the customization journey. Supplying data and fine-tuning a model had a tangible destination: users could converse with the customized model and examine its responses through the same application."
+        },
+        {
+          "id": "research-workflows",
+          "title": "Connecting the research workflow",
+          "navigationLabel": "Research workflows",
+          "body": "The core experiences needed to work together: token-based access, supplying data for fine-tuning, and interacting with customized models. I worked across those boundaries as one client application, connecting the services to the actions users could take.\n\nConversation management belonged in that larger workflow. The interface needed to support an ongoing exchange with the model, while the fine-tuning integration gave the conversation its customization context. Keeping the relationship between data, model customization, and conversation visible was more useful than presenting each backend capability as a disconnected tool."
+        },
+        {
+          "id": "product-context",
+          "title": "Engineering an AI interface in 2023",
+          "navigationLabel": "Product context",
+          "body": "This work took place during an early period of widespread experimentation with generative AI products. Many interaction conventions and large-context capabilities that became more familiar later were still developing. The practical question was how to make the particular research capabilities available through this application understandable to its users.\n\nThe engineering work connected access control, model customization, and streaming responses. It required close attention to backend API contracts and an interface that could represent evolving research capabilities. As the sole client-side engineer, I carried that translation across the application rather than working on only one isolated feature."
+        },
+        {
+          "id": "reflections",
+          "title": "What I took from the engagement",
+          "navigationLabel": "Reflections",
+          "body": "Building this application from an early stage taught me to look for the user journey connecting specialized services. A fine-tuning capability becomes useful to a user through the actions around it: gaining access, supplying data, and interacting with the model that results.\n\nThe streaming interface made that lesson particularly concrete. The application was responsible for an experience that continued while the service was producing output. I came away with a stronger appreciation for defining the client’s responsibilities clearly and building conversational interactions around what the underlying services could actually deliver."
+        }
+      ]
     }
   },
   {
