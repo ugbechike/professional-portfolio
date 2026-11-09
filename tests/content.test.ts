@@ -76,3 +76,71 @@ test('verified employment dates, overlap and homepage selection are preserved', 
     'I build thoughtful products and reliable systems.',
   );
 });
+
+test('case study navigation requires stable, unique section anchors', async () => {
+  const { caseStudySchema } = await import('@/modules/content/schemas/content');
+  const section = {
+    title: 'Overview',
+    body: 'First paragraph.\n\nSecond paragraph.',
+  };
+  assert.equal(
+    caseStudySchema.safeParse({ sections: [section] }).success,
+    true,
+  );
+  assert.equal(
+    caseStudySchema.safeParse({ tableOfContents: true, sections: [section] })
+      .success,
+    false,
+  );
+  assert.equal(
+    caseStudySchema.safeParse({
+      sections: [
+        { ...section, id: 'overview' },
+        { ...section, id: 'overview' },
+      ],
+    }).success,
+    false,
+  );
+  assert.equal(
+    caseStudySchema.safeParse({
+      subtitle: 'An engineering case study.',
+      metadata: [{ label: 'Client', value: 'Example' }],
+      tableOfContents: true,
+      sections: [
+        { ...section, id: 'overview', items: ['A delivery milestone.'] },
+      ],
+    }).success,
+    true,
+  );
+});
+
+test('DCP narrative preserves publication scope and evidence boundaries', async () => {
+  const project = await jsonRepository.getProjectBySlug('dcp-plus');
+  assert.ok(project);
+  assert.equal(project.caseStudy.format, 'narrative');
+  assert.equal(project.caseStudy.sections.length, 10);
+  assert.equal(
+    project.caseStudy.metadata?.find((item) => item.label === 'Period')?.value,
+    'June 2025 to October 2, 2026',
+  );
+  assert.equal(JSON.stringify(project).includes('—'), false);
+  assert.ok(project.caseStudy.sections.every((section) => section.id));
+  const delivery = project.caseStudy.sections.find(
+    (section) => section.id === 'delivery',
+  );
+  assert.equal(delivery?.items?.length, 6);
+  assert.match(
+    delivery?.body ?? '',
+    /completed deployment and production validation.*were not confirmed/,
+  );
+  assert.match(
+    project.caseStudy.sections.find(
+      (section) => section.id === 'authentication',
+    )?.body ?? '',
+    /small internal testing sample/,
+  );
+  assert.ok(project.metrics.every((metric) => metric.scope === 'development'));
+  const concrete = await jsonRepository.getProjectBySlug('concrete');
+  assert.equal(concrete?.caseStudy.format, undefined);
+  assert.ok(concrete?.metrics.length);
+});
