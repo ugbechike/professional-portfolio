@@ -14,7 +14,13 @@ const ListSection = ({ title, items }: { title: string; items: string[] }) =>
     </section>
   ) : null;
 export const CaseStudy = ({ project }: { project: Project }) => (
-  <article className="shell">
+  <article
+    className={
+      project.caseStudy.format === 'narrative'
+        ? 'shell case-study-narrative'
+        : 'shell'
+    }
+  >
     <header className="page-hero">
       <Link className="detail-back" href="/work">
         <ArrowLeft size={15} /> All work
@@ -24,25 +30,52 @@ export const CaseStudy = ({ project }: { project: Project }) => (
       </div>
       <h1>
         {project.title}
-        <span className="accent">.</span>
-      </h1>
-      <p>{project.summary}</p>
-      <div className="detail-meta">
-        <div>
-          <div className="eyebrow">ROLE & OWNERSHIP</div>
-          <p>{project.role}</p>
-        </div>
-        {project.stack.length > 0 && (
-          <div>
-            <div className="eyebrow">TECHNOLOGIES & TOOLS</div>
-            <div className="tags">
-              {project.stack.map((tech) => (
-                <span key={tech}>{tech}</span>
-              ))}
-            </div>
-          </div>
+        {project.caseStudy.format !== 'narrative' && (
+          <span className="accent">.</span>
         )}
-      </div>
+      </h1>
+      <p>{project.caseStudy.subtitle ?? project.summary}</p>
+      {project.caseStudy.metadata?.length ? (
+        <dl className="case-study-metadata">
+          {project.caseStudy.metadata.map((item) => (
+            <div key={item.label}>
+              <dt>{item.label}</dt>
+              <dd>{item.value}</dd>
+            </div>
+          ))}
+        </dl>
+      ) : (
+        <div className="detail-meta">
+          <div>
+            <div className="eyebrow">ROLE & OWNERSHIP</div>
+            <p>{project.role}</p>
+          </div>
+          {project.stack.length > 0 && (
+            <div>
+              <div className="eyebrow">TECHNOLOGIES & TOOLS</div>
+              <div className="tags">
+                {project.stack.map((tech) => (
+                  <span key={tech}>{tech}</span>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+      {project.caseStudy.tableOfContents && (
+        <nav className="case-study-contents" aria-label="Case study contents">
+          <p className="eyebrow">{'// in this case study'}</p>
+          <ul>
+            {project.caseStudy.sections.map((section) => (
+              <li key={section.id}>
+                <a href={`#${section.id}`}>
+                  {section.navigationLabel ?? section.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
     </header>
     <div className="detail-layout">
       <div className="prose">
@@ -55,9 +88,21 @@ export const CaseStudy = ({ project }: { project: Project }) => (
           </section>
         )}
         {project.caseStudy.sections.map((section) => (
-          <section key={section.title}>
+          <section key={section.id ?? section.title} id={section.id}>
             <h2>{section.title}</h2>
-            <p>{section.body}</p>
+            {section.body
+              .split(/\n\s*\n/)
+              .filter(Boolean)
+              .map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
+            {section.items?.length ? (
+              <ul>
+                {section.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            ) : null}
             {section.image && section.image.kind !== 'illustration' && (
               <Image
                 src={section.image.src}
@@ -76,33 +121,43 @@ export const CaseStudy = ({ project }: { project: Project }) => (
             )}
           </section>
         ))}
-        <ListSection
-          title="The engineering challenges"
-          items={project.challenges}
-        />
-        <ListSection title="My contributions" items={project.contributions} />
-        <ListSection title="Engineering decisions" items={project.decisions} />
-        <ListSection title="Outcomes" items={project.outcomes} />
-        {project.metrics.length > 0 && (
-          <section>
-            <h2>Results, with context.</h2>
-            <div className="metrics">
-              {project.metrics.map((metric) => (
-                <div className="metric" key={metric.label}>
-                  <span className="badge">
-                    {metric.scope === 'development'
-                      ? 'Local development observation'
-                      : `${metric.scope} outcome`}
-                  </span>
-                  <div>
-                    <strong>{metric.value}</strong>
-                  </div>
-                  <h3>{metric.label}</h3>
-                  <p>{metric.context}</p>
+        {project.caseStudy.format !== 'narrative' && (
+          <>
+            <ListSection
+              title="The engineering challenges"
+              items={project.challenges}
+            />
+            <ListSection
+              title="My contributions"
+              items={project.contributions}
+            />
+            <ListSection
+              title="Engineering decisions"
+              items={project.decisions}
+            />
+            <ListSection title="Outcomes" items={project.outcomes} />
+            {project.metrics.length > 0 && (
+              <section>
+                <h2>Results, with context.</h2>
+                <div className="metrics">
+                  {project.metrics.map((metric) => (
+                    <div className="metric" key={metric.label}>
+                      <span className="badge">
+                        {metric.scope === 'development'
+                          ? 'Local development observation'
+                          : `${metric.scope} outcome`}
+                      </span>
+                      <div>
+                        <strong>{metric.value}</strong>
+                      </div>
+                      <h3>{metric.label}</h3>
+                      <p>{metric.context}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </section>
+              </section>
+            )}
+          </>
         )}
         {project.links.length > 0 && (
           <div className="detail-links">

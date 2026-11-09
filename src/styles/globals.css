@@ -673,3 +673,57 @@ time {
     gap: 6px;
   }
 }
+
+.case-study-metadata {
+  margin: 28px 0 0;
+  padding-top: 24px;
+  border-top: 1px dashed var(--line);
+}
+.case-study-metadata > div {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 18px;
+  margin-bottom: 12px;
+}
+.case-study-metadata dt {
+  font: 12px/1.8 var(--display);
+  color: var(--muted);
+}
+.case-study-metadata dd {
+  margin: 0;
+  color: var(--secondary);
+  font-size: 15px;
+  overflow-wrap: anywhere;
+}
+.case-study-contents {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px dashed var(--line);
+}
+.case-study-contents ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 22px;
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+}
+.case-study-contents a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font: 13px/1.6 var(--display);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--line);
+}
+.case-study-narrative .prose section + section {
+  padding-top: 28px;
+  border-top: 1px dashed var(--line);
+}
+@media (max-width: 640px) {
+  .case-study-metadata > div {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}

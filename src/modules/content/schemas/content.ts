@@ -18,17 +18,44 @@ export const impactMetricSchema = z.object({
   scope: z.enum(['personal', 'team', 'platform', 'development']),
   context: z.string().min(1),
 });
-export const caseStudySchema = z.object({
-  sections: z.array(
-    z.object({
-      title: z.string(),
-      body: z.string(),
-      image: mediaAssetSchema.optional(),
-      code: z.string().optional(),
-      diagram: z.string().optional(),
-    }),
-  ),
-});
+export const caseStudySchema = z
+  .object({
+    format: z.enum(['summary', 'narrative']).optional(),
+    subtitle: z.string().min(1).optional(),
+    metadata: z
+      .array(z.object({ label: z.string().min(1), value: z.string().min(1) }))
+      .optional(),
+    tableOfContents: z.boolean().optional(),
+    sections: z.array(
+      z.object({
+        id: slug.optional(),
+        navigationLabel: z.string().min(1).optional(),
+        title: z.string(),
+        body: z.string(),
+        items: z.array(z.string().min(1)).optional(),
+        image: mediaAssetSchema.optional(),
+        code: z.string().optional(),
+        diagram: z.string().optional(),
+      }),
+    ),
+  })
+  .superRefine((study, context) => {
+    const ids = study.sections.flatMap((section) =>
+      section.id ? [section.id] : [],
+    );
+    if (new Set(ids).size !== ids.length)
+      context.addIssue({
+        code: 'custom',
+        message: 'Case study section IDs must be unique',
+        path: ['sections'],
+      });
+    if (study.tableOfContents && study.sections.some((section) => !section.id))
+      context.addIssue({
+        code: 'custom',
+        message: 'Table of contents requires an ID on every section',
+        path: ['sections'],
+      });
+  });
 export const profileSchema = z.object({
   name: z.string(),
   role: z.string(),
