@@ -140,7 +140,6 @@ test('DCP narrative preserves publication scope and evidence boundaries', async 
     /small internal testing sample/,
   );
   assert.ok(project.metrics.every((metric) => metric.scope === 'development'));
-  const concrete = await jsonRepository.getProjectBySlug('concrete');
-  assert.equal(concrete?.caseStudy.format, undefined);
-  assert.ok(concrete?.metrics.length);
+  const cardata = await jsonRepository.getProjectBySlug('cardata');
+  assert.equal(cardata?.caseStudy.format, undefined);
 });

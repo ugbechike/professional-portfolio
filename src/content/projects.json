@@ -169,11 +169,11 @@
   {
     "id": "concrete",
     "slug": "concrete",
-    "title": "Concrete Earn / Borrow",
+    "title": "Concrete Finance",
     "category": ["Fintech / DeFi", "Web"],
-    "summary": "Led the Earn frontend and contributed to Borrow: vault deposits and withdrawals, rewards, portfolio analytics, and wallet connections.",
-    "role": "Frontend lead, Concrete Earn \u00b7 contributor, Concrete Borrow",
-    "ownership": "Frontend lead, Concrete Earn \u00b7 contributor, Concrete Borrow",
+    "summary": "Owned the complete Concrete Earn client, from wallet identity to smart-contract transactions and portfolio views; contributed to Concrete Borrow.",
+    "role": "Client implementation owner, Concrete Earn · contributor, Concrete Borrow",
+    "ownership": "Full ownership of the Concrete Earn frontend implementation; contributor to Concrete Borrow alongside other engineers.",
     "stack": [
       "React",
       "Next.js",
@@ -188,11 +188,8 @@
     "featured": true,
     "challenges": [],
     "contributions": [
-      "Led frontend engineering for Concrete Earn and contributed to Concrete Borrow.",
-      "Delivered vault deposits and withdrawals, rewards, and portfolio analytics.",
-      "Built wallet authentication and connection flows.",
-      "Contributed liquidation protection features, multi-network vault management, and APY visibility.",
-      "Developed reusable SDK modules."
+      "Integrated Earn directly with smart contracts for deposits, withdrawals, balances, rewards, and portfolio information.",
+      "Contributed to Borrow’s multi-network vault management, liquidation protection, APY visibility, and reusable SDK integrations."
     ],
     "decisions": [],
     "outcomes": [],
@@ -215,14 +212,69 @@
       }
     ],
     "caseStudy": {
-      "sections": [
+      "format": "narrative",
+      "subtitle": "Engineering DeFi products around wallet identity, smart contracts, and financial workflows.",
+      "metadata": [
         {
-          "title": "The product context",
-          "body": "Concrete Earn and Borrow are DeFi products involving smart contracts, financial workflows, and wallet-based interactions. John led the frontend engineering work for Earn and contributed to Borrow."
+          "label": "Products",
+          "value": "Concrete Earn and Concrete Borrow"
         },
         {
-          "title": "Ownership across financial workflows",
-          "body": "The work covered deposits, withdrawals, rewards, portfolio analytics, and wallet connections. Multi-network vault management and APY visibility helped expose financial product information through the frontend."
+          "label": "Earn responsibility",
+          "value": "Full frontend implementation ownership"
+        },
+        {
+          "label": "Borrow responsibility",
+          "value": "Contributor alongside other engineers"
+        },
+        {
+          "label": "Core technologies",
+          "value": "React, Next.js, TypeScript, Web3Auth, WalletConnect"
+        }
+      ],
+      "tableOfContents": true,
+      "sections": [
+        {
+          "id": "product",
+          "title": "Understanding the financial product",
+          "navigationLabel": "Product",
+          "body": "Concrete Finance brings financial products built around blockchain-based vaults and smart contracts into a user-facing application. A user needs to understand a position, connect an account, authorize an operation, and interpret the resulting financial information. Those steps belong to one product journey even though they cross the interface, the wallet, and the blockchain.\n\nMy engagement covered two distinct products. I took full ownership of the frontend implementation of Concrete Earn, connecting wallet identity, vault interactions, and portfolio management. On Concrete Borrow, I worked alongside other engineers on multi-network vault management, liquidation protection features, APY visibility, and reusable integrations. The products shared a need for understandable financial workflows, but my responsibilities were different in each."
+        },
+        {
+          "id": "earn",
+          "title": "Taking ownership of Concrete Earn",
+          "navigationLabel": "Earn ownership",
+          "body": "Concrete Earn was a complete product responsibility. I owned the client implementation from wallet connection and authentication through vault discovery, deposits, withdrawals, rewards, balances, and portfolio views. The work required understanding how each interaction related to the financial operation underneath it.\n\nI integrated directly with smart contracts to retrieve on-chain data and execute user-authorized transactions. The application therefore had to connect two kinds of interaction: reading information about an account or vault, and asking the user to authorize an operation that would change blockchain state.\n\nA deposit or withdrawal was part of a larger experience. Users also needed to see the relevant vault information, understand their balances and positions, and return to a portfolio view that made those holdings meaningful. Owning the complete implementation let me work across those connections rather than treating each screen as an isolated delivery."
+        },
+        {
+          "id": "wallet-identity",
+          "title": "Wallet identity and transaction authorization",
+          "navigationLabel": "Wallet identity",
+          "body": "The wallet experience used Web3Auth and WalletConnect. My responsibility included connection flows and wallet-based authentication and authorization, bringing the connected account into the application’s financial workflows.\n\nConnection, identity, and transaction authorization are related, but they answer different questions. Connectivity establishes access to a wallet; the account identifies whose information the application is working with; signing authorizes a particular blockchain operation. A connected wallet does not by itself authorize every action the interface can present.\n\nKeeping those distinctions clear mattered when connecting a product action to a contract call. Reading a balance and submitting a deposit should not be treated as interchangeable interactions. The latter requires explicit user signing, so authorization is part of the experience the application has to communicate."
+        },
+        {
+          "id": "smart-contracts",
+          "title": "Connecting product actions to smart contracts",
+          "navigationLabel": "Contract integration",
+          "body": "I built the Earn application with React, Next.js, and TypeScript, integrating its financial workflows directly with smart contracts. Contract reads supplied vault information, balances, rewards, and portfolio data. Deposits and withdrawals connected user intent in the interface to signed transactions.\n\nReading contract state gives the application information to present. Submitting a transaction asks the blockchain system to change that state. That distinction shaped the responsibility at the integration boundary: the interface needed to represent what was known about a position while making the operation being authorized understandable.\n\nThis work went beyond consuming a conventional API for every financial action. I had to connect the financial meaning of the interaction to the contract operation and the connected account, then carry that relationship through the user-facing workflow. The integration and the product experience were parts of the same implementation."
+        },
+        {
+          "id": "financial-information",
+          "title": "Making financial information usable",
+          "navigationLabel": "Financial information",
+          "body": "Balances, rewards, vault positions, and portfolio views gave users different perspectives on their holdings. A vault interaction focuses attention on one operation; a portfolio view helps someone understand their position across the product. I implemented both as parts of the Earn experience.\n\nThe product challenge was to make that information readable without hiding the transaction requirements behind it. A balance provides context for a decision, while transaction feedback helps explain the action the user is taking. Clear presentation matters because the interface is where people relate a financial intention to an operation they must authorize.\n\nThat made financial information a core engineering concern. Retrieving on-chain values was only part of the work; those values also had to serve the deposit, withdrawal, rewards, and portfolio journeys that brought users to the application."
+        },
+        {
+          "id": "borrow",
+          "title": "Contributing to Concrete Borrow",
+          "navigationLabel": "Borrow contributions",
+          "body": "Concrete Borrow was a separate collaboration with other engineers. My contributions covered multi-network vault management, liquidation protection features, APY visibility, and reusable SDK modules for partner integrations.\n\nThese workflows brought a different set of product considerations. Liquidation-related information matters to how users understand a borrowing position and the protection features available to them. APY visibility gives users financial information relevant to interpreting the product. My work connected these capabilities to the user experience within the wider team’s implementation.\n\nI also developed reusable SDK modules for partner integrations. Reusable integration code gives product surfaces a common way to connect with capabilities instead of requiring each surface to assemble its own integration. This extended my contribution beyond the immediate interface while keeping the focus on the financial workflows the products needed to support."
+        },
+        {
+          "id": "reflections",
+          "title": "What financial application ownership taught me",
+          "navigationLabel": "Reflections",
+          "body": "This engagement reinforced that a useful financial interface starts with understanding the operation itself. Wallet connectivity, account identity, contract reads, and signed transactions all participate in the experience, but they carry different responsibilities.\n\nOwning Earn meant keeping those responsibilities connected across a complete product. Contributing to Borrow meant applying the same care within a shared implementation. In both, the work I value most is the connection between maintainable integrations and clear financial information: users need to understand what they are looking at and what they are authorizing."
         }
       ]
     }
