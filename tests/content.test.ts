@@ -151,12 +151,20 @@ test('Concrete and Reka narratives retain ownership, scope, and stable routes', 
     const project = await jsonRepository.getProjectBySlug(slug);
     assert.ok(project);
     assert.equal(project.caseStudy.format, 'narrative');
-    assert.equal(project.caseStudy.sections.length, 7);
+    assert.equal(project.caseStudy.sections.length, 5);
     assert.equal(project.caseStudy.tableOfContents, true);
+    const words = project.caseStudy.sections
+      .map((section) => section.body)
+      .join(' ')
+      .split(/\s+/).length;
+    assert.ok(words >= 350 && words <= 600);
+    assert.ok(
+      project.caseStudy.sections.every((section) => !section.items?.length),
+    );
     assert.equal(JSON.stringify(project).includes('—'), false);
     assert.equal(
       new Set(project.caseStudy.sections.map((section) => section.id)).size,
-      7,
+      5,
     );
   }
   const concrete = await jsonRepository.getProjectBySlug('concrete');

@@ -198,45 +198,33 @@
       "sections": [
         {
           "id": "product",
-          "title": "Understanding the financial product",
+          "title": "The product",
           "navigationLabel": "Product",
-          "body": "Concrete Finance brings financial products built around blockchain-based vaults and smart contracts into a user-facing application. A user needs to understand a position, connect an account, authorize an operation, and interpret the resulting financial information. Those steps belong to one product journey even though they cross the interface, the wallet, and the blockchain.\n\nMy engagement covered two distinct products. I took full ownership of the frontend implementation of Concrete Earn, connecting wallet identity, vault interactions, and portfolio management. On Concrete Borrow, I worked alongside other engineers on multi-network vault management, liquidation protection features, APY visibility, and reusable integrations. The products shared a need for understandable financial workflows, but my responsibilities were different in each."
+          "body": "Concrete Finance connects users to financial products built around blockchain vaults and smart contracts. The experience brings together wallet identity, deposits and withdrawals, rewards, and portfolio information. Users need to understand their positions and the operations they are authorizing, even when those interactions cross the application, wallet, and blockchain.\n\nMy engagement spanned Concrete Earn and Concrete Borrow. I owned the complete client implementation of Earn and contributed to Borrow alongside other engineers. Each product required careful translation between financial operations and the experience presented to users."
         },
         {
           "id": "earn",
-          "title": "Taking ownership of Concrete Earn",
+          "title": "Owning the Concrete Earn experience",
           "navigationLabel": "Earn ownership",
-          "body": "Concrete Earn was a complete product responsibility. I owned the client implementation from wallet connection and authentication through vault discovery, deposits, withdrawals, rewards, balances, and portfolio views. The work required understanding how each interaction related to the financial operation underneath it.\n\nI integrated directly with smart contracts to retrieve on-chain data and execute user-authorized transactions. The application therefore had to connect two kinds of interaction: reading information about an account or vault, and asking the user to authorize an operation that would change blockchain state.\n\nA deposit or withdrawal was part of a larger experience. Users also needed to see the relevant vault information, understand their balances and positions, and return to a portfolio view that made those holdings meaningful. Owning the complete implementation let me work across those connections rather than treating each screen as an isolated delivery."
-        },
-        {
-          "id": "wallet-identity",
-          "title": "Wallet identity and transaction authorization",
-          "navigationLabel": "Wallet identity",
-          "body": "The wallet experience used Web3Auth and WalletConnect. My responsibility included connection flows and wallet-based authentication and authorization, bringing the connected account into the application’s financial workflows.\n\nConnection, identity, and transaction authorization are related, but they answer different questions. Connectivity establishes access to a wallet; the account identifies whose information the application is working with; signing authorizes a particular blockchain operation. A connected wallet does not by itself authorize every action the interface can present.\n\nKeeping those distinctions clear mattered when connecting a product action to a contract call. Reading a balance and submitting a deposit should not be treated as interchangeable interactions. The latter requires explicit user signing, so authorization is part of the experience the application has to communicate."
+          "body": "I took full ownership of the frontend implementation of Concrete Earn, from wallet connection and authentication through vault interactions, balances, rewards, and portfolio management. That scope let me connect the experience around a user’s financial journey: discover a vault, understand a position, authorize a deposit or withdrawal, and review holdings.\n\nI integrated directly with smart contracts to retrieve on-chain information and execute user-authorized transactions. Vault details and portfolio views depended on contract reads; deposits and withdrawals required signed operations that changed blockchain state. My responsibility was to connect those operations to a cohesive application, with the account, financial information, and intended action clearly related.\n\nBalances, rewards, and portfolio views were central to that work. They gave users context for an individual vault interaction and a broader view of their holdings. I built those experiences alongside the transaction flows so that financial information served the decisions users were making."
         },
         {
           "id": "smart-contracts",
-          "title": "Connecting product actions to smart contracts",
-          "navigationLabel": "Contract integration",
-          "body": "I built the Earn application with React, Next.js, and TypeScript, integrating its financial workflows directly with smart contracts. Contract reads supplied vault information, balances, rewards, and portfolio data. Deposits and withdrawals connected user intent in the interface to signed transactions.\n\nReading contract state gives the application information to present. Submitting a transaction asks the blockchain system to change that state. That distinction shaped the responsibility at the integration boundary: the interface needed to represent what was known about a position while making the operation being authorized understandable.\n\nThis work went beyond consuming a conventional API for every financial action. I had to connect the financial meaning of the interaction to the contract operation and the connected account, then carry that relationship through the user-facing workflow. The integration and the product experience were parts of the same implementation."
-        },
-        {
-          "id": "financial-information",
-          "title": "Making financial information usable",
-          "navigationLabel": "Financial information",
-          "body": "Balances, rewards, vault positions, and portfolio views gave users different perspectives on their holdings. A vault interaction focuses attention on one operation; a portfolio view helps someone understand their position across the product. I implemented both as parts of the Earn experience.\n\nThe product challenge was to make that information readable without hiding the transaction requirements behind it. A balance provides context for a decision, while transaction feedback helps explain the action the user is taking. Clear presentation matters because the interface is where people relate a financial intention to an operation they must authorize.\n\nThat made financial information a core engineering concern. Retrieving on-chain values was only part of the work; those values also had to serve the deposit, withdrawal, rewards, and portfolio journeys that brought users to the application."
+          "title": "Wallet identity and contract integration",
+          "navigationLabel": "Wallets & contracts",
+          "body": "The application used React, Next.js, and TypeScript, with Web3Auth and WalletConnect supporting the wallet experience. Connection, account identity, and transaction authorization had distinct roles: a wallet connection made interaction possible, the account identified whose information was relevant, and signing authorized a specific operation.\n\nI carried those distinctions into the integration between product actions and contract calls. Reading a balance supplied information for the interface; submitting a deposit or withdrawal required explicit user signing. Making that authorization understandable was part of building the financial workflow.\n\nThis was direct smart-contract integration, so the application’s responsibilities extended beyond presenting API responses. I needed to understand the financial operation, connect it to the appropriate contract interaction, and present the information and transaction feedback users needed to follow it."
         },
         {
           "id": "borrow",
           "title": "Contributing to Concrete Borrow",
           "navigationLabel": "Borrow contributions",
-          "body": "Concrete Borrow was a separate collaboration with other engineers. My contributions covered multi-network vault management, liquidation protection features, APY visibility, and reusable SDK modules for partner integrations.\n\nThese workflows brought a different set of product considerations. Liquidation-related information matters to how users understand a borrowing position and the protection features available to them. APY visibility gives users financial information relevant to interpreting the product. My work connected these capabilities to the user experience within the wider team’s implementation.\n\nI also developed reusable SDK modules for partner integrations. Reusable integration code gives product surfaces a common way to connect with capabilities instead of requiring each surface to assemble its own integration. This extended my contribution beyond the immediate interface while keeping the focus on the financial workflows the products needed to support."
+          "body": "On Concrete Borrow, I worked within a wider engineering team on multi-network vault management, liquidation protection features, and APY visibility. These capabilities brought borrowing positions and their financial context into the user experience.\n\nLiquidation-related information helped explain the protection features available around a position, while APY visibility exposed information relevant to understanding the product. I contributed the application work around those capabilities and developed reusable SDK modules for partner integrations, extending the work beyond a single product surface."
         },
         {
           "id": "reflections",
-          "title": "What financial application ownership taught me",
-          "navigationLabel": "Reflections",
-          "body": "This engagement reinforced that a useful financial interface starts with understanding the operation itself. Wallet connectivity, account identity, contract reads, and signed transactions all participate in the experience, but they carry different responsibilities.\n\nOwning Earn meant keeping those responsibilities connected across a complete product. Contributing to Borrow meant applying the same care within a shared implementation. In both, the work I value most is the connection between maintainable integrations and clear financial information: users need to understand what they are looking at and what they are authorizing."
+          "title": "Delivery and reflection",
+          "navigationLabel": "Delivery & reflection",
+          "body": "My work on Earn connected wallet access, direct contract interactions, and portfolio management into a complete client experience. On Borrow, I contributed targeted financial workflows and reusable integrations within the team’s implementation.\n\nThe engagement reinforced that financial product engineering starts with understanding the operation the user intends to perform. Clear authorization, readable financial information, and maintainable contract integrations need to work together. Owning Earn gave me responsibility for those connections across the application; Borrow gave me a complementary role delivering them within a shared engineering effort."
         }
       ]
     }
@@ -296,45 +284,33 @@
       "sections": [
         {
           "id": "greenfield",
-          "title": "Building the application from scratch",
-          "navigationLabel": "Greenfield application",
-          "body": "In March 2023, I began work on a greenfield AI research application at Reka AI. Users could supply their own data for model fine-tuning and interact with customized models through a conversational interface. The application connected model customization with the experience of using the resulting model.\n\nAs the sole client-side engineer, I established the application and implemented its core user-facing experiences. My responsibility was to turn the capabilities exposed by the underlying services into a coherent product: access the application, provide data for customization, and carry on a conversation with a model.\n\nThat ownership sat at the client boundary. The AI models and training infrastructure belonged to the underlying services; my work made those capabilities accessible through the application and connected the workflows users needed to move between them."
+          "title": "The product and my engagement",
+          "navigationLabel": "Product & engagement",
+          "body": "In March 2023, I began building a greenfield AI research application at Reka AI. Users could supply their own data to fine-tune models, then interact with those customized models through streaming conversations. The product connected model customization with a practical way to explore its results.\n\nAs the sole client-side engineer, I established the application and implemented its core user-facing experiences. My scope covered token-based access, integration with fine-tuning services, and the conversational interface. I was responsible for making those capabilities work together as a product, while the specialized backend services handled model training and inference."
         },
         {
           "id": "access",
-          "title": "Making token-based access part of the experience",
-          "navigationLabel": "Token-based access",
-          "body": "Users required an assigned token to access the application. I implemented the client experience around that access model, making token-based authentication the entry point to the research workflows.\n\nAccess was part of the product journey rather than a separate piece of plumbing. Before a user could work with data or interact with a customized model, the application needed to connect their access token with the services that supported those experiences. This gave the client a clear responsibility at the start of the workflow without making it the owner of the underlying model infrastructure."
+          "title": "Access and application boundaries",
+          "navigationLabel": "Access",
+          "body": "Users needed an assigned token to enter the application. I implemented the client experience around that access model, connecting authentication to the research workflows that followed.\n\nThe same attention to service boundaries carried through the application. API contracts determined which operations the client could request and what information it could present. Working closely with those contracts helped me translate the available research capabilities into user-facing actions without obscuring the services responsible for them."
         },
         {
           "id": "fine-tuning",
-          "title": "Connecting user data to model fine-tuning",
+          "title": "Connecting data to customized models",
           "navigationLabel": "Fine-tuning",
-          "body": "Model fine-tuning was central to the product. I integrated Python APIs that exposed the customization capabilities, connecting the user-facing data-supply workflow to the services responsible for fine-tuning.\n\nThe client work was about making that capability usable as a sequence of related actions. Users supplied data for customization and could then interact with the resulting models. The application had to connect those experiences so that model customization led into an actual conversation, rather than leaving fine-tuning as an isolated technical operation.\n\nThe API boundary defined what the application could request and what information it could present. Working closely with those contracts was essential to representing the research capabilities accurately. I implemented the client integrations and workflows; the Python services performed the underlying fine-tuning work."
+          "body": "I integrated Python APIs that exposed model fine-tuning capabilities. Users could supply data for customization and then interact with the resulting models. My work connected the data-supply workflow to those services and brought the customized model into the conversational experience.\n\nThe product challenge was the continuity between those steps. Fine-tuning needed to lead somewhere useful: a user could move from providing their data to examining a model’s responses through conversation. I built the client workflows around that relationship, keeping the interface aligned with the underlying API capabilities."
         },
         {
           "id": "streaming-conversations",
-          "title": "Presenting a conversation as it unfolds",
+          "title": "Building the streaming conversation",
           "navigationLabel": "Streaming chat",
-          "body": "I built the conversational interface through which users interacted with fine-tuned models. Responses appeared progressively as output arrived, rather than waiting for an entire response before showing it.\n\nStreaming changed the interaction from a single request followed by a finished result into an ongoing exchange. The client had to display an answer that was still arriving while maintaining the context of the conversation. Managing that ongoing conversation was part of the application’s responsibility, alongside presenting the model output itself.\n\nFor this product, the chat experience completed the customization journey. Supplying data and fine-tuning a model had a tangible destination: users could converse with the customized model and examine its responses through the same application."
-        },
-        {
-          "id": "research-workflows",
-          "title": "Connecting the research workflow",
-          "navigationLabel": "Research workflows",
-          "body": "The core experiences needed to work together: token-based access, supplying data for fine-tuning, and interacting with customized models. I worked across those boundaries as one client application, connecting the services to the actions users could take.\n\nConversation management belonged in that larger workflow. The interface needed to support an ongoing exchange with the model, while the fine-tuning integration gave the conversation its customization context. Keeping the relationship between data, model customization, and conversation visible was more useful than presenting each backend capability as a disconnected tool."
-        },
-        {
-          "id": "product-context",
-          "title": "Engineering an AI interface in 2023",
-          "navigationLabel": "Product context",
-          "body": "This work took place during an early period of widespread experimentation with generative AI products. Many interaction conventions and large-context capabilities that became more familiar later were still developing. The practical question was how to make the particular research capabilities available through this application understandable to its users.\n\nThe engineering work connected access control, model customization, and streaming responses. It required close attention to backend API contracts and an interface that could represent evolving research capabilities. As the sole client-side engineer, I carried that translation across the application rather than working on only one isolated feature."
+          "body": "I built a chat interface that presented model output progressively as it arrived. The client displayed an answer while it was still being produced and maintained the context of the ongoing conversation.\n\nThat made streaming a core interaction responsibility. The application had to support an exchange unfolding over time, connecting incoming output with the conversation the user was following. For this product, it also completed the fine-tuning journey: users could converse with customized models and examine their responses in the same application."
         },
         {
           "id": "reflections",
-          "title": "What I took from the engagement",
-          "navigationLabel": "Reflections",
-          "body": "Building this application from an early stage taught me to look for the user journey connecting specialized services. A fine-tuning capability becomes useful to a user through the actions around it: gaining access, supplying data, and interacting with the model that results.\n\nThe streaming interface made that lesson particularly concrete. The application was responsible for an experience that continued while the service was producing output. I came away with a stronger appreciation for defining the client’s responsibilities clearly and building conversational interactions around what the underlying services could actually deliver."
+          "title": "Delivery and reflection",
+          "navigationLabel": "Delivery & reflection",
+          "body": "The application brought assigned-token access, data-driven model customization, and streaming conversations together. Building it in 2023 meant working in a rapidly evolving product category, with interaction conventions and research capabilities still developing. Close attention to the backend contracts kept the client grounded in what the services could deliver.\n\nThe engagement strengthened my approach to greenfield product engineering: understand the user’s goal, define the client’s responsibilities, and connect specialized capabilities into a journey people can follow. Here, that meant carrying the experience from initial access through model customization to an ongoing conversation."
         }
       ]
     }
