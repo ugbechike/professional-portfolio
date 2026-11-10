@@ -118,26 +118,28 @@ test('DCP narrative preserves publication scope and evidence boundaries', async 
   const project = await jsonRepository.getProjectBySlug('dcp-plus');
   assert.ok(project);
   assert.equal(project.caseStudy.format, 'narrative');
-  assert.equal(project.caseStudy.sections.length, 10);
+  assert.equal(project.caseStudy.sections.length, 6);
   assert.equal(
     project.caseStudy.metadata?.find((item) => item.label === 'Period')?.value,
     'June 2025 to October 2, 2026',
   );
   assert.equal(JSON.stringify(project).includes('—'), false);
   assert.ok(project.caseStudy.sections.every((section) => section.id));
-  const delivery = project.caseStudy.sections.find(
-    (section) => section.id === 'delivery',
-  );
-  assert.equal(delivery?.items?.length, 6);
+  const narrative = project.caseStudy.sections
+    .map((section) => section.body)
+    .join(' ');
+  const wordCount = narrative.split(/\s+/).length;
+  assert.ok(wordCount >= 900 && wordCount <= 1200);
+  assert.doesNotMatch(narrative, /ECAD|sole Lazer|mocked APIs|handoff/i);
+  assert.match(narrative, /embedded within the client’s engineering team/);
   assert.match(
-    delivery?.body ?? '',
-    /completed deployment and production validation.*were not confirmed/,
+    narrative,
+    /primary engineer responsible for the client applications/,
   );
-  assert.match(
-    project.caseStudy.sections.find(
-      (section) => section.id === 'authentication',
-    )?.body ?? '',
-    /small internal testing sample/,
+  assert.match(narrative, /passed Samsung Seller Office pre-testing/);
+  assert.match(narrative, /prepared the v0.3.0 release package/);
+  assert.ok(
+    project.caseStudy.sections.every((section) => !section.items?.length),
   );
   assert.ok(project.metrics.every((metric) => metric.scope === 'development'));
   const cardata = await jsonRepository.getProjectBySlug('cardata');
