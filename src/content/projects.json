@@ -210,31 +210,39 @@
           "id": "product",
           "title": "The product",
           "navigationLabel": "Product",
-          "body": "Concrete is a decentralized finance platform built around on-chain yield vaults. Users deposit supported assets and receive vault shares representing their portion of a vault, giving them access to yield strategies through one interface. The value of those shares changes with the underlying assets and strategy performance.\n\nConcrete’s documented vault model follows ERC-4626, a standard for tokenized vaults. The protocol handles strategy allocation, accounting, and withdrawal operations behind the interface. My work focused on the client experience that made vault information and user-authorized actions accessible.\n\nMy engagement spanned Concrete Earn and Concrete Borrow. I owned the complete client implementation of Earn and contributed to Borrow alongside other engineers. Each product required careful translation between financial operations and the experience presented to users."
+          "body": "Concrete is a decentralized finance platform built around on-chain yield vaults. Users deposit supported assets and receive vault shares representing their portion of a vault, giving them access to yield strategies through one interface. The value of those shares changes with the underlying assets and strategy performance.\n\nConcrete’s documented vault model follows ERC-4626, a standard for tokenized vaults. The protocol handles strategy allocation, accounting, and withdrawal operations behind the interface."
         },
         {
-          "id": "earn",
-          "title": "Owning the Concrete Earn experience",
-          "navigationLabel": "Earn ownership",
-          "body": "I took full ownership of the frontend implementation of Concrete Earn, from wallet connection and authentication through vault interactions, balances, rewards, and portfolio management. That scope let me connect the experience around a user’s financial journey: discover a vault, understand a position, authorize a deposit or withdrawal, and review holdings.\n\nI integrated directly with smart contracts to retrieve on-chain information and execute user-authorized transactions. Vault details and portfolio views depended on contract reads; deposits and withdrawals required signed operations that changed blockchain state. My responsibility was to connect those operations to a cohesive application, with the account, financial information, and intended action clearly related.\n\nBalances, rewards, and portfolio views were central to that work. They gave users context for an individual vault interaction and a broader view of their holdings. I built those experiences alongside the transaction flows so that financial information served the decisions users were making."
+          "id": "engagement",
+          "title": "My engagement",
+          "navigationLabel": "Engagement",
+          "body": "I owned the complete frontend implementation of Concrete Earn. On Concrete Borrow, I contributed alongside another engineer. My work connected financial operations with the information and authorization users needed to manage their positions."
         },
         {
-          "id": "smart-contracts",
-          "title": "Wallet identity and contract integration",
-          "navigationLabel": "Wallets & contracts",
-          "body": "The application used React, Next.js, and TypeScript, with Web3Auth and WalletConnect supporting the wallet experience. Connection, account identity, and transaction authorization had distinct roles: a wallet connection made interaction possible, the account identified whose information was relevant, and signing authorized a specific operation.\n\nI carried those distinctions into the integration between product actions and contract calls. Reading a balance supplied information for the interface; submitting a deposit or withdrawal required explicit user signing. Making that authorization understandable was part of building the financial workflow.\n\nThis was direct smart-contract integration, so the application’s responsibilities extended beyond presenting API responses. I needed to understand the financial operation, connect it to the appropriate contract interaction, and present the information and transaction feedback users needed to follow it."
-        },
-        {
-          "id": "borrow",
-          "title": "Contributing to Concrete Borrow",
-          "navigationLabel": "Borrow contributions",
-          "body": "On Concrete Borrow, I worked within a wider engineering team on multi-network vault management, liquidation protection features, and APY visibility. These capabilities brought borrowing positions and their financial context into the user experience.\n\nLiquidation-related information helped explain the protection features available around a position, while APY visibility exposed information relevant to understanding the product. I contributed the application work around those capabilities and developed reusable SDK modules for partner integrations, extending the work beyond a single product surface."
+          "id": "engineering-work",
+          "title": "Engineering work",
+          "navigationLabel": "Engineering work",
+          "body": "",
+          "engineeringContributions": [
+            {
+              "heading": "Building Concrete Earn",
+              "body": "I implemented the complete client application, including vault operations, deposits, withdrawals, rewards, balances, and portfolio management. Connecting these capabilities let users move from reviewing a vault to authorizing an operation and understanding their holdings within one application."
+            },
+            {
+              "heading": "Wallets and smart-contract interactions",
+              "body": "I integrated wallet authentication, contract reads, and signed transactions directly with blockchain operations. Account identity, wallet connection, and transaction authorization served distinct purposes: reads supplied financial information, while deposits and withdrawals required explicit user signing. The client connected each product action to its corresponding contract operation."
+            },
+            {
+              "heading": "Concrete Borrow and reusable integrations",
+              "body": "Alongside another engineer, I contributed to multi-network vault management, liquidation protection features, and APY visibility. I also developed reusable SDK modules for partner integrations, extending those capabilities beyond a single application surface."
+            }
+          ]
         },
         {
           "id": "reflections",
           "title": "Delivery and reflection",
           "navigationLabel": "Delivery & reflection",
-          "body": "My work on Earn connected wallet access, direct contract interactions, and portfolio management into a complete client experience. On Borrow, I contributed targeted financial workflows and reusable integrations within the team’s implementation.\n\nThe engagement reinforced that financial product engineering starts with understanding the operation the user intends to perform. Clear authorization, readable financial information, and maintainable contract integrations need to work together. Owning Earn gave me responsibility for those connections across the application; Borrow gave me a complementary role delivering them within a shared engineering effort."
+          "body": "My work delivered the Earn client experience and targeted contributions to Borrow. The engagement reinforced the importance of making financial information and transaction authorization understandable together, with clear boundaries between what the client displayed and what users signed."
         }
       ]
     }
@@ -298,34 +306,42 @@
       "tableOfContents": true,
       "sections": [
         {
-          "id": "greenfield",
-          "title": "The product and my engagement",
-          "navigationLabel": "Product & engagement",
-          "body": "In March 2023, I began building a greenfield AI research application at Reka AI. Users could supply their own data to fine-tune models, then interact with those customized models through streaming conversations. The product connected model customization with a practical way to explore its results.\n\nAs the sole client-side engineer, I established the application and implemented its core user-facing experiences. My scope covered token-based access, integration with fine-tuning services, and the conversational interface. I was responsible for making those capabilities work together as a product, while the specialized backend services handled model training and inference."
+          "id": "product",
+          "title": "The product",
+          "navigationLabel": "Product",
+          "body": "Reka’s 2023 research application let users supply their own data to fine-tune models, then explore the results through streaming conversations. It connected model customization with a practical way to examine a model’s responses."
         },
         {
-          "id": "access",
-          "title": "Access and application boundaries",
-          "navigationLabel": "Access",
-          "body": "Users needed an assigned token to enter the application. I implemented the client experience around that access model, connecting authentication to the research workflows that followed.\n\nThe same attention to service boundaries carried through the application. API contracts determined which operations the client could request and what information it could present. Working closely with those contracts helped me translate the available research capabilities into user-facing actions without obscuring the services responsible for them."
+          "id": "engagement",
+          "title": "My engagement",
+          "navigationLabel": "Engagement",
+          "body": "I began the greenfield engagement in March 2023 as the sole client-side engineer. My scope covered application foundations, access, fine-tuning workflows, and the conversational interface. Backend services handled model training and inference."
         },
         {
-          "id": "fine-tuning",
-          "title": "Connecting data to customized models",
-          "navigationLabel": "Fine-tuning",
-          "body": "I integrated Python APIs that exposed model fine-tuning capabilities. Users could supply data for customization and then interact with the resulting models. My work connected the data-supply workflow to those services and brought the customized model into the conversational experience.\n\nThe product challenge was the continuity between those steps. Fine-tuning needed to lead somewhere useful: a user could move from providing their data to examining a model’s responses through conversation. I built the client workflows around that relationship, keeping the interface aligned with the underlying API capabilities."
-        },
-        {
-          "id": "streaming-conversations",
-          "title": "Building the streaming conversation",
-          "navigationLabel": "Streaming chat",
-          "body": "I built a chat interface that presented model output progressively as it arrived. The client displayed an answer while it was still being produced and maintained the context of the ongoing conversation.\n\nThat made streaming a core interaction responsibility. The application had to support an exchange unfolding over time, connecting incoming output with the conversation the user was following. For this product, it also completed the fine-tuning journey: users could converse with customized models and examine their responses in the same application."
+          "id": "engineering-work",
+          "title": "Engineering work",
+          "navigationLabel": "Engineering work",
+          "body": "",
+          "engineeringContributions": [
+            {
+              "heading": "Greenfield application engineering",
+              "body": "I established the client application and integrated assigned-token access. I connected that access model to the research workflows, keeping client actions aligned with the operations supported by the backend contracts."
+            },
+            {
+              "heading": "Model fine-tuning workflows",
+              "body": "I integrated Python APIs that enabled users to customize models with their own data. My client work connected the data-supply workflow to fine-tuning services and brought the resulting models into the conversational experience; the underlying training infrastructure remained a backend responsibility."
+            },
+            {
+              "heading": "Streaming conversational experiences",
+              "body": "I built the chat interface to display responses progressively as they arrived while maintaining the ongoing conversation. This completed the customization journey by letting users interact with their fine-tuned models in the same application."
+            }
+          ]
         },
         {
           "id": "reflections",
           "title": "Delivery and reflection",
           "navigationLabel": "Delivery & reflection",
-          "body": "The application brought assigned-token access, data-driven model customization, and streaming conversations together. Building it in 2023 meant working in a rapidly evolving product category, with interaction conventions and research capabilities still developing. Close attention to the backend contracts kept the client grounded in what the services could deliver.\n\nThe engagement strengthened my approach to greenfield product engineering: understand the user’s goal, define the client’s responsibilities, and connect specialized capabilities into a journey people can follow. Here, that meant carrying the experience from initial access through model customization to an ongoing conversation."
+          "body": "The application brought token-based access, model customization, and streaming conversations together. Building it strengthened my approach to greenfield engineering: define the client’s responsibilities around the user journey and validate those responsibilities against the capabilities of the underlying services."
         }
       ]
     }
@@ -369,7 +385,44 @@
       }
     ],
     "caseStudy": {
-      "sections": []
+      "sections": [
+        {
+          "id": "product",
+          "title": "The product",
+          "navigationLabel": "Product",
+          "body": "Cardata Mobile supported trip tracking and access to trip information through a mobile dashboard."
+        },
+        {
+          "id": "engagement",
+          "title": "My engagement",
+          "navigationLabel": "Engagement",
+          "body": "I contributed as a React Native engineer, working across application lifecycle behavior, iOS permissions, native-backed trip tracking, and dashboard synchronization."
+        },
+        {
+          "id": "engineering-work",
+          "title": "Engineering work",
+          "navigationLabel": "Engineering work",
+          "body": "",
+          "engineeringContributions": [
+            {
+              "heading": "Native-backed trip tracking",
+              "body": "I worked on the integration between React Native and native trip tracking, including iOS location and motion permission flows. This work connected the mobile experience to the device capabilities on which tracking depended."
+            },
+            {
+              "heading": "Application lifecycle and data synchronization",
+              "body": "I improved dashboard data loading and synchronization when the application returned to the foreground. Working across lifecycle transitions and data refresh connected React Native reliability work to the trip information users saw when reopening the app."
+            }
+          ]
+        },
+        {
+          "id": "reflections",
+          "title": "Delivery and reflection",
+          "navigationLabel": "Delivery & reflection",
+          "body": "My contributions focused on the relationship between device behavior, trip tracking, and dashboard data. The work required attention to what happened as the application changed lifecycle state, as well as what appeared on screen."
+        }
+      ],
+      "format": "narrative",
+      "tableOfContents": true
     }
   },
   {
@@ -402,7 +455,40 @@
       }
     ],
     "caseStudy": {
-      "sections": []
+      "sections": [
+        {
+          "id": "product",
+          "title": "The product",
+          "navigationLabel": "Product",
+          "body": "PlaiDay brought AI image-generation workflows to a mobile application."
+        },
+        {
+          "id": "engagement",
+          "title": "My engagement",
+          "navigationLabel": "Engagement",
+          "body": "I contributed to the React Native application, focusing on the user-facing image-generation experience."
+        },
+        {
+          "id": "engineering-work",
+          "title": "Engineering work",
+          "navigationLabel": "Engineering work",
+          "body": "",
+          "engineeringContributions": [
+            {
+              "heading": "Mobile image-generation workflows",
+              "body": "I contributed to AI image-generation workflows in React Native. My work concerned the mobile experience through which users accessed generation capabilities, rather than the underlying model infrastructure."
+            }
+          ]
+        },
+        {
+          "id": "reflections",
+          "title": "Delivery and reflection",
+          "navigationLabel": "Delivery & reflection",
+          "body": "My contribution was to the mobile product experience. The work shared here is limited to those image-generation workflows; no model-development or platform-level outcome is attributed to my role."
+        }
+      ],
+      "format": "narrative",
+      "tableOfContents": true
     }
   },
   {
@@ -435,7 +521,40 @@
       }
     ],
     "caseStudy": {
-      "sections": []
+      "sections": [
+        {
+          "id": "product",
+          "title": "The product",
+          "navigationLabel": "Product",
+          "body": "NFL ALL DAY included web purchasing experiences that guided users through a commerce flow."
+        },
+        {
+          "id": "engagement",
+          "title": "My engagement",
+          "navigationLabel": "Engagement",
+          "body": "I contributed product engineering work to the purchasing experience using Next.js, server rendering, and XState."
+        },
+        {
+          "id": "engineering-work",
+          "title": "Engineering work",
+          "navigationLabel": "Engineering work",
+          "body": "",
+          "engineeringContributions": [
+            {
+              "heading": "Purchasing flows with explicit state",
+              "body": "I contributed to server-rendered purchasing experiences in Next.js with XState-based state handling. This combined web delivery with an explicit representation of the purchasing flow, making state part of how the application handled the user’s progress."
+            }
+          ]
+        },
+        {
+          "id": "reflections",
+          "title": "Delivery and reflection",
+          "navigationLabel": "Delivery & reflection",
+          "body": "My work contributed to the purchasing experience within the wider product. Its technical focus was the relationship between server rendering and explicit application state during a commerce journey."
+        }
+      ],
+      "format": "narrative",
+      "tableOfContents": true
     }
   },
   {
@@ -475,7 +594,44 @@
       }
     ],
     "caseStudy": {
-      "sections": []
+      "sections": [
+        {
+          "id": "product",
+          "title": "The product",
+          "navigationLabel": "Product",
+          "body": "Global Villages was a marketplace with web and mobile experiences."
+        },
+        {
+          "id": "engagement",
+          "title": "My engagement",
+          "navigationLabel": "Engagement",
+          "body": "I contributed to cross-platform engineering using React Native, Next.js, and TypeScript, including shared marketplace architecture, authentication, and payments."
+        },
+        {
+          "id": "engineering-work",
+          "title": "Engineering work",
+          "navigationLabel": "Engineering work",
+          "body": "",
+          "engineeringContributions": [
+            {
+              "heading": "Shared web and mobile foundations",
+              "body": "I contributed to the marketplace architecture across React Native and Next.js. The work focused on shared foundations for a product delivered through both web and mobile clients."
+            },
+            {
+              "heading": "Authentication and payment integration",
+              "body": "I integrated authentication and payment capabilities into the marketplace experience. This connected account access and checkout to the services supporting those operations, extending the client work beyond presenting marketplace content."
+            }
+          ]
+        },
+        {
+          "id": "reflections",
+          "title": "Delivery and reflection",
+          "navigationLabel": "Delivery & reflection",
+          "body": "My contributions spanned shared client foundations and the integrations needed for marketplace access and payment. The engagement brought cross-platform application work together with the service boundaries of a commerce product."
+        }
+      ],
+      "format": "narrative",
+      "tableOfContents": true
     }
   },
   {
@@ -516,7 +672,40 @@
       }
     ],
     "caseStudy": {
-      "sections": []
+      "sections": [
+        {
+          "id": "product",
+          "title": "The product",
+          "navigationLabel": "Product",
+          "body": "Mart supported mobile ordering, visitor checkout, and fulfillment, with a Picker App initiative focused on the fulfillment side of the service."
+        },
+        {
+          "id": "engagement",
+          "title": "My engagement",
+          "navigationLabel": "Engagement",
+          "body": "I contributed as a React Native engineer across ordering, visitor checkout, and fulfillment experiences, including the Picker App initiative."
+        },
+        {
+          "id": "engineering-work",
+          "title": "Engineering work",
+          "navigationLabel": "Engineering work",
+          "body": "",
+          "engineeringContributions": [
+            {
+              "heading": "Ordering and fulfillment workflows",
+              "body": "I contributed to the mobile workflows spanning order placement, visitor checkout, and fulfillment, including work on the Picker App initiative. This scope connected customer-facing commerce with the operational side of fulfilling orders."
+            }
+          ]
+        },
+        {
+          "id": "reflections",
+          "title": "Delivery and reflection",
+          "navigationLabel": "Delivery & reflection",
+          "body": "My contributions covered parts of both the ordering and fulfillment experiences. The work reinforced the value of understanding the operational journey behind a mobile purchase, alongside the customer-facing flow."
+        }
+      ],
+      "format": "narrative",
+      "tableOfContents": true
     }
   },
   {
@@ -547,7 +736,34 @@
       }
     ],
     "caseStudy": {
-      "sections": []
+      "sections": [
+        {
+          "id": "product",
+          "title": "The product",
+          "navigationLabel": "Product",
+          "body": "IHLAD is a current mobile application engagement. Product details have not yet been published."
+        },
+        {
+          "id": "engagement",
+          "title": "My engagement",
+          "navigationLabel": "Engagement",
+          "body": "I am working as a React Native and Expo engineer on the engagement."
+        },
+        {
+          "id": "engineering-work",
+          "title": "Engineering work",
+          "navigationLabel": "Engineering work",
+          "body": "Specific engineering contributions have not yet been published."
+        },
+        {
+          "id": "reflections",
+          "title": "Delivery and reflection",
+          "navigationLabel": "Delivery & reflection",
+          "body": "The engagement is ongoing. Delivery outcomes and reflections have not yet been published."
+        }
+      ],
+      "format": "narrative",
+      "tableOfContents": true
     }
   }
 ]

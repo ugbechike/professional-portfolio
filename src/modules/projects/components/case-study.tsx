@@ -106,13 +106,27 @@ export const CaseStudy = ({ project }: { project: Project }) => (
         )}
         {project.caseStudy.sections.map((section) => (
           <section key={section.id ?? section.title} id={section.id}>
-            <h2>{section.title}</h2>
+            {section.id === 'engineering-work' ? (
+              <h2 className="engineering-label">{'// engineering work'}</h2>
+            ) : (
+              <h2>{section.title}</h2>
+            )}
             {section.body
               .split(/\n\s*\n/)
               .filter(Boolean)
               .map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
+            {section.engineeringContributions && (
+              <ul className="engineering-contributions">
+                {section.engineeringContributions.map((contribution) => (
+                  <li key={contribution.heading}>
+                    <strong>{contribution.heading}</strong>
+                    <p>{contribution.body}</p>
+                  </li>
+                ))}
+              </ul>
+            )}
             {section.items?.length ? (
               <ul>
                 {section.items.map((item) => (

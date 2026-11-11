@@ -33,6 +33,13 @@ export const caseStudySchema = z
         title: z.string(),
         body: z.string(),
         items: z.array(z.string().min(1)).optional(),
+        engineeringContributions: z
+          .array(
+            z.object({ heading: z.string().min(1), body: z.string().min(1) }),
+          )
+          .min(1)
+          .max(3)
+          .optional(),
         image: mediaAssetSchema.optional(),
         code: z.string().optional(),
         diagram: z.string().optional(),

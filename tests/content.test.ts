@@ -142,31 +142,9 @@ test('DCP narrative preserves publication scope and evidence boundaries', async 
     project.caseStudy.sections.every((section) => !section.items?.length),
   );
   assert.ok(project.metrics.every((metric) => metric.scope === 'development'));
-  const cardata = await jsonRepository.getProjectBySlug('cardata');
-  assert.equal(cardata?.caseStudy.format, undefined);
 });
 
 test('Concrete and Reka narratives retain ownership, scope, and stable routes', async () => {
-  for (const slug of ['concrete', 'reka-ai']) {
-    const project = await jsonRepository.getProjectBySlug(slug);
-    assert.ok(project);
-    assert.equal(project.caseStudy.format, 'narrative');
-    assert.equal(project.caseStudy.sections.length, 5);
-    assert.equal(project.caseStudy.tableOfContents, true);
-    const words = project.caseStudy.sections
-      .map((section) => section.body)
-      .join(' ')
-      .split(/\s+/).length;
-    assert.ok(words >= 350 && words <= 600);
-    assert.ok(
-      project.caseStudy.sections.every((section) => !section.items?.length),
-    );
-    assert.equal(JSON.stringify(project).includes('—'), false);
-    assert.equal(
-      new Set(project.caseStudy.sections.map((section) => section.id)).size,
-      5,
-    );
-  }
   const concrete = await jsonRepository.getProjectBySlug('concrete');
   assert.equal(concrete?.title, 'Concrete Finance');
   assert.match(
@@ -184,4 +162,77 @@ test('Concrete and Reka narratives retain ownership, scope, and stable routes', 
     '2023, beginning in March',
   );
   assert.deepEqual(reka?.metrics, []);
+});
+
+test('professional studies use four sections and evidence-sized engineering lists', async () => {
+  const expectedCounts: Record<string, number> = {
+    concrete: 3,
+    'reka-ai': 3,
+    cardata: 2,
+    plaiday: 1,
+    'nfl-all-day': 1,
+    'global-villages': 2,
+    mart: 1,
+    ihlad: 0,
+  };
+  for (const project of await jsonRepository.getProjects()) {
+    if (project.slug === 'dcp-plus') continue;
+    assert.equal(project.caseStudy.format, 'narrative');
+    assert.deepEqual(
+      project.caseStudy.sections.map(({ title }) => title),
+      [
+        'The product',
+        'My engagement',
+        'Engineering work',
+        'Delivery and reflection',
+      ],
+    );
+    assert.equal(
+      new Set(project.caseStudy.sections.map(({ id }) => id)).size,
+      4,
+    );
+    const engineering = project.caseStudy.sections[2];
+    assert.equal(
+      engineering.engineeringContributions?.length ?? 0,
+      expectedCounts[project.slug],
+    );
+    assert.ok(
+      project.caseStudy.sections.every((section) => !section.items?.length),
+    );
+    assert.equal(JSON.stringify(project.caseStudy).includes('—'), false);
+  }
+});
+
+test('engineering contribution schema rejects empty or oversized lists', async () => {
+  const { caseStudySchema } = await import('@/modules/content/schemas/content');
+  const contribution = {
+    heading: 'Integration',
+    body: 'Connected the client to the service.',
+  };
+  for (const count of [0, 4]) {
+    assert.equal(
+      caseStudySchema.safeParse({
+        sections: [
+          {
+            title: 'Engineering work',
+            body: '',
+            engineeringContributions: Array(count).fill(contribution),
+          },
+        ],
+      }).success,
+      false,
+    );
+  }
+  assert.equal(
+    caseStudySchema.safeParse({
+      sections: [
+        {
+          title: 'Engineering work',
+          body: '',
+          engineeringContributions: [contribution],
+        },
+      ],
+    }).success,
+    true,
+  );
 });
