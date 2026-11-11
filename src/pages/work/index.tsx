@@ -1,10 +1,11 @@
 import type { InferGetStaticPropsType } from 'next';
 import { Layout } from '@/components/layout/layout';
 import { Seo } from '@/components/ui/seo';
-import { ProjectDirectory } from '@/components/project-directory/project-directory';
+import { GroupedProjectDirectory } from '@/components/project-directory/grouped-project-directory';
 import {
   contentRepository,
   getSiteContent,
+  getExperienceContent,
 } from '@/modules/content/services/content';
 import { useProjects } from '@/modules/projects/hooks/use-projects';
 const workDescription =
@@ -14,10 +15,12 @@ export const getStaticProps = async () => ({
   props: {
     ...(await getSiteContent()),
     projects: await contentRepository.getProjects(),
+    experiences: await getExperienceContent(),
   },
 });
 const Work = ({
   projects,
+  experiences,
   ...site
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const directory = useProjects(projects);
@@ -49,10 +52,9 @@ const Work = ({
           <p className="directory-count" aria-live="polite">
             {directory.filtered.length} of {projects.length} engagements
           </p>
-          <ProjectDirectory
+          <GroupedProjectDirectory
             projects={directory.filtered}
-            headingLevel="h2"
-            detailed
+            experiences={experiences}
           />
         </section>
       </div>

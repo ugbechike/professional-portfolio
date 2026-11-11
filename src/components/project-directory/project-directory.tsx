@@ -5,10 +5,12 @@ export const ProjectDirectory = ({
   projects,
   headingLevel = 'h3',
   detailed = false,
+  showTechnologies = true,
 }: {
   projects: Project[];
   headingLevel?: 'h2' | 'h3';
   detailed?: boolean;
+  showTechnologies?: boolean;
 }) => {
   const Heading = headingLevel;
   return (
@@ -50,7 +52,7 @@ export const ProjectDirectory = ({
                     )}
                   </>
                 )}
-                {project.stack.length > 0 && (
+                {showTechnologies && project.stack.length > 0 && (
                   <div className="tags">
                     {project.stack.slice(0, 4).map((tech) => (
                       <span key={tech}>{tech}</span>

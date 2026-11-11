@@ -123,6 +123,7 @@ export const experienceSchema = z.object({
   company: z.string(),
   role: z.string(),
   summary: z.string(),
+  directorySummary: z.string().min(1).optional(),
   startDate: z.iso.date().optional(),
   endDate: z.iso.date().optional(),
   projectIds: z.array(slug),

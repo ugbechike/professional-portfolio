@@ -286,3 +286,55 @@ test('launch content retains official links and treats IHLAD as completed work',
     projects.findIndex((project) => project.slug === 'global-villages'),
   );
 });
+
+test('employer relationships group every project once and survive category filters', async () => {
+  const { groupProjects } =
+    await import('@/modules/projects/services/group-projects');
+  const projects = await jsonRepository.getProjects();
+  const experiences = await jsonRepository.getExperiences();
+  const assigned = experiences.flatMap((item) => item.projectIds);
+  assert.equal(new Set(assigned).size, assigned.length);
+  assert.ok(
+    assigned.every((id) => projects.some((project) => project.id === id)),
+  );
+  const all = groupProjects(projects, experiences);
+  assert.deepEqual(
+    all.groups.map(({ experience, projects: entries }) => [
+      experience.id,
+      entries.map(({ id }) => id),
+    ]),
+    [
+      [
+        'lazer-technologies',
+        ['dcp-plus', 'concrete', 'reka-ai', 'plaiday', 'cardata', 'ihlad'],
+      ],
+      ['global-villages', ['global-villages']],
+      ['mart', ['mart']],
+    ],
+  );
+  assert.deepEqual(
+    all.additional.map(({ id }) => id),
+    ['nfl-all-day'],
+  );
+  for (const category of new Set(
+    projects.flatMap((project) => project.category),
+  )) {
+    const matching = projects.filter((project) =>
+      project.category.includes(category),
+    );
+    const filtered = groupProjects(matching, experiences);
+    assert.ok(filtered.groups.every((group) => group.projects.length > 0));
+    const visible = [
+      ...filtered.groups.flatMap((group) => group.projects),
+      ...filtered.additional,
+    ];
+    assert.deepEqual(
+      visible.map(({ id }) => id).sort(),
+      matching.map(({ id }) => id).sort(),
+    );
+  }
+  assert.deepEqual(groupProjects([], experiences), {
+    groups: [],
+    additional: [],
+  });
+});

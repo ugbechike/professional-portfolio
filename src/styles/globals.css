@@ -238,6 +238,27 @@ button:focus-visible {
   border-top: 1px dashed var(--line);
   padding: 25px 0;
 }
+.employer-group {
+  margin-top: 36px;
+}
+.employer-heading {
+  margin-bottom: 20px;
+}
+.employer-heading h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.employer-heading .employer-meta {
+  font: 12px/1.8 var(--display);
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.employer-heading > p:last-child {
+  font-size: 15px;
+}
+.employer-group .project-entry {
+  padding-block: 20px;
+}
 .project-entry.has-date {
   display: grid;
   grid-template-columns: 80px 1fr;

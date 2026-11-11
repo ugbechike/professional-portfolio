@@ -5,7 +5,15 @@
     "role": "Senior Software Engineer",
     "summary": "Embedded within client engineering teams to deliver production applications across fintech, streaming, AI, commerce, and mobile platforms. Worked with engineers, product managers, and stakeholders on product requirements, architecture, implementation, and delivery.",
     "startDate": "2021-09-01",
-    "projectIds": []
+    "projectIds": [
+      "dcp-plus",
+      "concrete",
+      "reka-ai",
+      "plaiday",
+      "cardata",
+      "ihlad"
+    ],
+    "directorySummary": "Working as a Senior Software Engineer embedded within client engineering teams, contributing to product development, architecture, integrations, and delivery across different industries."
   },
   {
     "id": "global-villages",
@@ -13,7 +21,7 @@
     "role": "Senior Software Engineer",
     "summary": "Developed shared web and mobile marketplace experiences, including product discovery, authentication, and payment integrations.",
     "startDate": "2021-02-01",
-    "projectIds": [],
+    "projectIds": ["global-villages"],
     "endDate": "2021-08-01"
   },
   {
@@ -22,7 +30,7 @@
     "role": "Software Engineer",
     "summary": "Built React Native commerce and fulfillment features, including order recommendations, guest checkout, and mobile workflows for order processing.",
     "startDate": "2019-07-01",
-    "projectIds": [],
+    "projectIds": ["mart"],
     "endDate": "2021-01-01"
   },
   {
