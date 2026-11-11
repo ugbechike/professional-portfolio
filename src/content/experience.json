@@ -11,9 +11,11 @@
       "reka-ai",
       "plaiday",
       "cardata",
-      "ihlad"
+      "ihlad",
+      "nfl-all-day"
     ],
-    "directorySummary": "Working as a Senior Software Engineer embedded within client engineering teams, contributing to product development, architecture, integrations, and delivery across different industries."
+    "directorySummary": "Working as a Senior Software Engineer embedded within client engineering teams, contributing to product development, architecture, integrations, and delivery across different industries.",
+    "workPresentation": "clients"
   },
   {
     "id": "global-villages",
@@ -22,7 +24,8 @@
     "summary": "Developed shared web and mobile marketplace experiences, including product discovery, authentication, and payment integrations.",
     "startDate": "2021-02-01",
     "projectIds": ["global-villages"],
-    "endDate": "2021-08-01"
+    "endDate": "2021-08-01",
+    "workPresentation": "direct"
   },
   {
     "id": "mart",
@@ -31,7 +34,8 @@
     "summary": "Built React Native commerce and fulfillment features, including order recommendations, guest checkout, and mobile workflows for order processing.",
     "startDate": "2019-07-01",
     "projectIds": ["mart"],
-    "endDate": "2021-01-01"
+    "endDate": "2021-01-01",
+    "workPresentation": "direct"
   },
   {
     "id": "tenece",

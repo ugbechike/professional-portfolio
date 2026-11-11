@@ -124,6 +124,7 @@ export const experienceSchema = z.object({
   role: z.string(),
   summary: z.string(),
   directorySummary: z.string().min(1).optional(),
+  workPresentation: z.enum(['clients', 'direct']).optional(),
   startDate: z.iso.date().optional(),
   endDate: z.iso.date().optional(),
   projectIds: z.array(slug),

@@ -241,11 +241,31 @@ button:focus-visible {
 .employer-group {
   margin-top: 36px;
 }
+.employer-group + .employer-group {
+  margin-top: 64px;
+  padding-top: 36px;
+  border-top: 1px dashed var(--muted);
+}
+.employer-clients {
+  margin-top: 28px;
+  padding-left: 24px;
+  border-left: 1px dashed var(--line);
+}
+.client-group-label {
+  color: var(--muted);
+  font: 12px/1.8 var(--display);
+  margin-bottom: 16px;
+}
+@media (max-width: 640px) {
+  .employer-clients {
+    padding-left: 16px;
+  }
+}
 .employer-heading {
   margin-bottom: 20px;
 }
 .employer-heading h2 {
-  font-size: 20px;
+  font-size: 22px;
   margin-bottom: 8px;
 }
 .employer-heading .employer-meta {

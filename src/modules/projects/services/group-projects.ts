@@ -4,7 +4,19 @@ export const groupProjects = (
   projects: Project[],
   experiences: Experience[],
 ) => {
-  const assigned = new Set(experiences.flatMap((item) => item.projectIds));
+  const relationships = experiences.flatMap((item) => item.projectIds);
+  const assigned = new Set(relationships);
+  if (assigned.size !== relationships.length)
+    throw new Error('A project cannot belong to multiple employers');
+  if (projects.some((project) => !assigned.has(project.id)))
+    throw new Error('Every public project must have an employer relationship');
+  if (
+    experiences.some(
+      (item) =>
+        item.workPresentation === 'direct' && item.projectIds.length !== 1,
+    )
+  )
+    throw new Error('Direct employer entries require exactly one project');
   const groups = experiences
     .map((experience) => ({
       experience,
@@ -14,8 +26,5 @@ export const groupProjects = (
       }),
     }))
     .filter((group) => group.projects.length > 0);
-  return {
-    groups,
-    additional: projects.filter((project) => !assigned.has(project.id)),
-  };
+  return { groups };
 };

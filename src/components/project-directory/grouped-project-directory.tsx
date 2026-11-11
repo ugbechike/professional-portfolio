@@ -1,4 +1,5 @@
 import type { Experience, Project } from '@/modules/content/types/content';
+import Link from 'next/link';
 import { groupProjects } from '@/modules/projects/services/group-projects';
 import { ProjectDirectory } from './project-directory';
 
@@ -16,7 +17,7 @@ export const GroupedProjectDirectory = ({
   projects: Project[];
   experiences: Experience[];
 }) => {
-  const { groups, additional } = groupProjects(projects, experiences);
+  const { groups } = groupProjects(projects, experiences);
   return (
     <>
       {groups.map(({ experience, projects: entries }) => (
@@ -49,20 +50,24 @@ export const GroupedProjectDirectory = ({
             </p>
             <p>{experience.directorySummary ?? experience.summary}</p>
           </header>
-          <ProjectDirectory projects={entries} showTechnologies={false} />
+          {experience.workPresentation === 'direct' ? (
+            <Link
+              className="text-link"
+              href={`/work/${entries[0].slug}`}
+              aria-label={`View work at ${experience.company}`}
+            >
+              View work <span aria-hidden="true">↗</span>
+            </Link>
+          ) : (
+            <div className="employer-clients">
+              <p className="client-group-label">
+                Client engagements at {experience.company}
+              </p>
+              <ProjectDirectory projects={entries} showTechnologies={false} />
+            </div>
+          )}
         </section>
       ))}
-      {additional.length > 0 && (
-        <section
-          className="employer-group"
-          aria-labelledby="additional-engagements"
-        >
-          <header className="employer-heading">
-            <h2 id="additional-engagements">Additional product engagements</h2>
-          </header>
-          <ProjectDirectory projects={additional} showTechnologies={false} />
-        </section>
-      )}
     </>
   );
 };

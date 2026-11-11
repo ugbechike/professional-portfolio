@@ -306,16 +306,38 @@ test('employer relationships group every project once and survive category filte
     [
       [
         'lazer-technologies',
-        ['dcp-plus', 'concrete', 'reka-ai', 'plaiday', 'cardata', 'ihlad'],
+        [
+          'dcp-plus',
+          'concrete',
+          'reka-ai',
+          'plaiday',
+          'cardata',
+          'ihlad',
+          'nfl-all-day',
+        ],
       ],
       ['global-villages', ['global-villages']],
       ['mart', ['mart']],
     ],
   );
-  assert.deepEqual(
-    all.additional.map(({ id }) => id),
-    ['nfl-all-day'],
+  assert.equal(all.groups.length, 3);
+  assert.equal(all.groups[0].projects.length, 7);
+  assert.equal(all.groups[0].experience.workPresentation, 'clients');
+  assert.ok(
+    all.groups
+      .slice(1)
+      .every(
+        ({ experience, projects }) =>
+          experience.workPresentation === 'direct' && projects.length === 1,
+      ),
   );
+  const represented = all.groups.flatMap((group) => group.projects);
+  assert.equal(new Set(represented.map(({ id }) => id)).size, 9);
+  for (const project of represented)
+    assert.equal(
+      (await jsonRepository.getProjectBySlug(project.slug))?.id,
+      project.id,
+    );
   for (const category of new Set(
     projects.flatMap((project) => project.category),
   )) {
@@ -324,10 +346,8 @@ test('employer relationships group every project once and survive category filte
     );
     const filtered = groupProjects(matching, experiences);
     assert.ok(filtered.groups.every((group) => group.projects.length > 0));
-    const visible = [
-      ...filtered.groups.flatMap((group) => group.projects),
-      ...filtered.additional,
-    ];
+    const visible = filtered.groups.flatMap((group) => group.projects);
+    assert.equal(new Set(visible.map(({ id }) => id)).size, visible.length);
     assert.deepEqual(
       visible.map(({ id }) => id).sort(),
       matching.map(({ id }) => id).sort(),
@@ -335,6 +355,17 @@ test('employer relationships group every project once and survive category filte
   }
   assert.deepEqual(groupProjects([], experiences), {
     groups: [],
-    additional: [],
   });
+});
+
+test('employer grouping rejects duplicate relationships and omitted public projects', async () => {
+  const { groupProjects } =
+    await import('@/modules/projects/services/group-projects');
+  const projects = await jsonRepository.getProjects();
+  const experiences = await jsonRepository.getExperiences();
+  assert.throws(() => groupProjects(projects, []), /Every public project/);
+  assert.throws(
+    () => groupProjects(projects, [...experiences, experiences[0]]),
+    /multiple employers/,
+  );
 });
