@@ -35,6 +35,23 @@ export const CaseStudy = ({ project }: { project: Project }) => (
         )}
       </h1>
       <p>{project.caseStudy.subtitle ?? project.summary}</p>
+      {project.links.length > 0 && (
+        <div className="detail-links">
+          {project.links.map((link) => (
+            <a
+              className="text-link"
+              href={link.url}
+              key={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${link.label} (opens in a new tab)`}
+            >
+              {link.label}
+              <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
+          ))}
+        </div>
+      )}
       {project.caseStudy.metadata?.length ? (
         <dl className="case-study-metadata">
           {project.caseStudy.metadata.map((item) => (
@@ -158,22 +175,6 @@ export const CaseStudy = ({ project }: { project: Project }) => (
               </section>
             )}
           </>
-        )}
-        {project.links.length > 0 && (
-          <div className="detail-links">
-            {project.links.map((link) => (
-              <a
-                className="text-link"
-                href={link.url}
-                key={link.url}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {link.label}
-                <ArrowUpRight size={16} />
-              </a>
-            ))}
-          </div>
         )}
         <Link className="text-link" href="/work">
           Explore more work <ArrowUpRight size={16} />
