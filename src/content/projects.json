@@ -3,11 +3,7 @@
     "id": "dcp-plus",
     "slug": "dcp-plus",
     "title": "DCP+",
-    "category": [
-      "Streaming",
-      "Web",
-      "Connected TV"
-    ],
+    "category": ["Streaming", "Web", "Connected TV"],
     "summary": "Engineering a streaming platform across web and connected TV.",
     "role": "Senior Software Engineer",
     "ownership": "Primary engineer responsible for the client applications from August 2025, embedded within the DCP+ engineering team.",
@@ -141,10 +137,7 @@
     "id": "concrete",
     "slug": "concrete",
     "title": "Concrete Finance",
-    "category": [
-      "Fintech / DeFi",
-      "Web"
-    ],
+    "category": ["Fintech / DeFi", "Web"],
     "summary": "Owned the complete Concrete Earn client, from wallet identity to smart-contract transactions and portfolio views; contributed to Concrete Borrow.",
     "role": "Client implementation owner, Concrete Earn · contributor, Concrete Borrow",
     "ownership": "Full ownership of the Concrete Earn frontend implementation; contributor to Concrete Borrow alongside other engineers.",
@@ -223,7 +216,7 @@
           "id": "engagement",
           "title": "My engagement",
           "navigationLabel": "Engagement",
-          "body": "I owned the complete frontend implementation of Concrete Earn. On Concrete Borrow, I contributed alongside another engineer. My work connected financial operations with the information and authorization users needed to manage their positions."
+          "body": "I worked across Concrete Earn and Concrete Borrow, with different responsibilities on each product. For Earn, I was the sole frontend engineer, developing the complete application experience in React, Next.js, and TypeScript. My scope covered wallet connection and authentication, vault operations, deposits, withdrawals, rewards, balances, and portfolio experiences.\n\nThe work involved direct smart-contract integration alongside supporting APIs. I connected financial data and wallet authorization to the interface so users could review a position, authorize an operation, and follow its result within the application.\n\nOn Borrow, I worked alongside another engineer, contributing to multi-network vault management, liquidation protection, APY visibility, and reusable SDK integrations. This combined full application responsibility on Earn with focused contributions within Borrow’s shared implementation."
         },
         {
           "id": "engineering-work",
@@ -233,11 +226,11 @@
           "engineeringContributions": [
             {
               "heading": "Building Concrete Earn",
-              "body": "I implemented the complete client application, including vault operations, deposits, withdrawals, rewards, balances, and portfolio management. Connecting these capabilities let users move from reviewing a vault to authorizing an operation and understanding their holdings within one application."
+              "body": "I built the Earn client from wallet connection and authentication through vault transactions, rewards, balances, and portfolio management. The application connected the information users needed to assess a vault with the operations needed to deposit, withdraw, and review their holdings."
             },
             {
               "heading": "Wallets and smart-contract interactions",
-              "body": "I integrated wallet authentication, contract reads, and signed transactions directly with blockchain operations. Account identity, wallet connection, and transaction authorization served distinct purposes: reads supplied financial information, while deposits and withdrawals required explicit user signing. The client connected each product action to its corresponding contract operation."
+              "body": "I integrated on-chain reads, wallet signing, and transaction execution directly with smart contracts and supporting APIs. The client had to connect financial operations to understandable actions: reading a position supplied information, while changing it required a user-authorized transaction. My work joined those different interactions into the vault workflow."
             },
             {
               "heading": "Concrete Borrow and reusable integrations",
@@ -258,10 +251,7 @@
     "id": "reka-ai",
     "slug": "reka-ai",
     "title": "Reka AI",
-    "category": [
-      "AI",
-      "Web"
-    ],
+    "category": ["AI", "Web"],
     "summary": "Sole client-side engineer for a greenfield AI research app, integrating model fine-tuning through Python APIs and streaming conversations.",
     "role": "Sole client-side engineer",
     "ownership": "Sole client-side engineer on a greenfield AI research application, beginning in March 2023.",
@@ -325,7 +315,7 @@
           "id": "engagement",
           "title": "My engagement",
           "navigationLabel": "Engagement",
-          "body": "I began the greenfield engagement in March 2023 as the sole client-side engineer. My scope covered application foundations, access, fine-tuning workflows, and the conversational interface. Backend services handled model training and inference."
+          "body": "Beginning in March 2023, I worked as the sole client-side engineer on a greenfield AI research application. I built the client from scratch, covering assigned-token access, model fine-tuning workflows, and streaming conversations. The scope connected the user’s first access to the application with their later interaction with a customized model.\n\nI integrated Python APIs that exposed the fine-tuning capabilities, building the user-facing path for supplying data and using the resulting models in chat. The backend services handled training and inference; my responsibility was the application through which users accessed those capabilities.\n\nThe conversational experience completed that workflow. I worked on progressive responses and conversation handling so model customization led into an ongoing exchange within the same application, rather than a disconnected set of research features."
         },
         {
           "id": "engineering-work",
@@ -338,8 +328,8 @@
               "body": "I established the client application and integrated assigned-token access. I connected that access model to the research workflows, keeping client actions aligned with the operations supported by the backend contracts."
             },
             {
-              "heading": "Model fine-tuning workflows",
-              "body": "I integrated Python APIs that enabled users to customize models with their own data. My client work connected the data-supply workflow to fine-tuning services and brought the resulting models into the conversational experience; the underlying training infrastructure remained a backend responsibility."
+              "heading": "Model fine-tuning integrations",
+              "body": "I integrated Python APIs that let users supply their own data for model customization. The client connected data submission and fine-tuning interactions with the resulting model’s conversational experience. This work concerned access to the training services, not implementation of the models or training infrastructure."
             },
             {
               "heading": "Streaming conversational experiences",
@@ -360,17 +350,11 @@
     "id": "cardata",
     "slug": "cardata",
     "title": "Cardata",
-    "category": [
-      "Mobile"
-    ],
+    "category": ["Mobile"],
     "summary": "React Native work on app lifecycle, iOS location and motion permissions, trip tracking, and dashboard synchronization.",
     "role": "React Native engineer",
     "ownership": "React Native engineer",
-    "stack": [
-      "React Native",
-      "iOS",
-      "Native integrations"
-    ],
+    "stack": ["React Native", "iOS", "Native integrations"],
     "status": "Published",
     "visibility": "public",
     "featured": true,
@@ -401,66 +385,26 @@
       }
     ],
     "caseStudy": {
-      "sections": [
-        {
-          "id": "product",
-          "title": "The product",
-          "navigationLabel": "Product",
-          "body": "Cardata Mobile supported trip tracking and access to trip information through a mobile dashboard."
-        },
-        {
-          "id": "engagement",
-          "title": "My engagement",
-          "navigationLabel": "Engagement",
-          "body": "I contributed as a React Native engineer, working across application lifecycle behavior, iOS permissions, native-backed trip tracking, and dashboard synchronization."
-        },
-        {
-          "id": "engineering-work",
-          "title": "Engineering work",
-          "navigationLabel": "Engineering work",
-          "body": "",
-          "engineeringContributions": [
-            {
-              "heading": "Native-backed trip tracking",
-              "body": "I worked on the integration between React Native and native trip tracking, including iOS location and motion permission flows. This work connected the mobile experience to the device capabilities on which tracking depended."
-            },
-            {
-              "heading": "Application lifecycle and data synchronization",
-              "body": "I improved dashboard data loading and synchronization when the application returned to the foreground. Working across lifecycle transitions and data refresh connected React Native reliability work to the trip information users saw when reopening the app."
-            }
-          ]
-        },
-        {
-          "id": "reflections",
-          "title": "Delivery and reflection",
-          "navigationLabel": "Delivery & reflection",
-          "body": "My contributions focused on the relationship between device behavior, trip tracking, and dashboard data. The work required attention to what happened as the application changed lifecycle state, as well as what appeared on screen."
-        }
-      ],
       "format": "narrative",
-      "tableOfContents": true
+      "sections": []
     }
   },
   {
     "id": "plaiday",
     "slug": "plaiday",
     "title": "PlaiDay",
-    "category": [
-      "AI",
-      "Mobile"
-    ],
-    "summary": "AI image-generation workflows on mobile.",
+    "category": ["AI", "Mobile"],
+    "summary": "Contributed to Re-imagine, Multi-subject generation, theme architecture, and social notifications in a React Native AI application.",
     "role": "React Native contributor",
     "ownership": "React Native contributor",
-    "stack": [
-      "React Native"
-    ],
+    "stack": ["React Native"],
     "status": "Published",
     "visibility": "public",
     "featured": false,
     "challenges": [],
     "contributions": [
-      "Contributed to React Native AI image-generation workflows."
+      "Implemented user-facing Re-imagine workflows and contributed to Multi-subject generation and theme re-architecture.",
+      "Worked on social notifications and native mobile integrations."
     ],
     "decisions": [],
     "outcomes": [],
@@ -480,32 +424,40 @@
         {
           "id": "product",
           "title": "The product",
-          "navigationLabel": "Product",
-          "body": "PlaiDay brought AI image-generation workflows to a mobile application."
+          "body": "PlaiDay was a social mobile application centered on AI-generated content. Users could create images, explore creative themes, and share generated content through interactions with friends and followers.",
+          "navigationLabel": "Product"
         },
         {
           "id": "engagement",
           "title": "My engagement",
-          "navigationLabel": "Engagement",
-          "body": "I contributed to the React Native application, focusing on the user-facing image-generation experience."
+          "body": "I worked on several major experiences within the PlaiDay mobile application, including Re-imagine, Multi-subject image generation, theme architecture, and social notifications. My contribution spanned React Native implementation and native mobile integrations where those experiences required them.\n\nThe work connected creative input with generated content and the social interactions that followed. Re-imagine began with a written scenario; Multi-subject brought together images of friends or family, a selected theme, generated captions, and sharing. I contributed to those multi-step journeys and to the theme re-architecture supporting the creative experience.\n\nI also worked on notification experiences involving followed users and people tagged in Multi-subject content. Across these areas, my role was to implement the mobile product behavior around generation and sharing, rather than the underlying image-generation models.",
+          "navigationLabel": "Engagement"
         },
         {
           "id": "engineering-work",
           "title": "Engineering work",
-          "navigationLabel": "Engineering work",
           "body": "",
           "engineeringContributions": [
             {
-              "heading": "Mobile image-generation workflows",
-              "body": "I contributed to AI image-generation workflows in React Native. My work concerned the mobile experience through which users accessed generation capabilities, rather than the underlying model infrastructure."
+              "heading": "Re-imagine and AI-assisted storytelling",
+              "body": "I implemented the user-facing workflow that connected a written scenario or creative situation to AI image generation. The mobile experience carried the user’s story into the generation interaction and presented the resulting image as the output of that creative process."
+            },
+            {
+              "heading": "Multi-subject generation and theme architecture",
+              "body": "I contributed to the workflow for supplying multiple images of friends or family, choosing a theme, and generating a composition featuring them together. My work included the theme re-architecture and experiences around generated captions and sharing with friends or followers, connecting generation to its social use."
+            },
+            {
+              "heading": "Social notifications and native integrations",
+              "body": "I worked on notifications associated with followed users and people tagged in Multi-subject content, alongside React Native and native integration work where required. These interactions connected the content-creation experience with the people participating in or following it."
             }
-          ]
+          ],
+          "navigationLabel": "Engineering work"
         },
         {
           "id": "reflections",
           "title": "Delivery and reflection",
-          "navigationLabel": "Delivery & reflection",
-          "body": "My contribution was to the mobile product experience. The work shared here is limited to those image-generation workflows; no model-development or platform-level outcome is attributed to my role."
+          "body": "My contributions connected AI image generation, multi-step mobile workflows, and social interactions across several product experiences. The work reinforced the need to consider the entire creative journey: how users supplied an idea, how themes shaped the result, and how that result reached the people involved.",
+          "navigationLabel": "Delivery & reflection"
         }
       ],
       "format": "narrative",
@@ -516,29 +468,28 @@
     "id": "nfl-all-day",
     "slug": "nfl-all-day",
     "title": "NFL ALL DAY",
-    "category": [
-      "Commerce",
-      "Web"
-    ],
-    "summary": "Purchasing experiences with server rendering and explicit state.",
+    "category": ["Commerce", "Web"],
+    "summary": "Contributed to the initial marketplace, FLOW-based purchasing, moment reveals, and reusable client foundations.",
     "role": "Product engineering contributor",
     "ownership": "Product engineering contributor",
-    "stack": [
-      "Next.js",
-      "SSR",
-      "XState"
-    ],
+    "stack": ["Next.js", "SSR", "XState"],
     "status": "Published",
     "visibility": "public",
     "featured": false,
     "challenges": [],
     "contributions": [
-      "Contributed to Next.js, server-rendered, XState-based purchasing experiences."
+      "Contributed to the initial Next.js marketplace and FLOW-based NFT purchase flow.",
+      "Worked on collectible cards, moment reveals, XState workflows, and an internal component library."
     ],
     "decisions": [],
     "outcomes": [],
     "metrics": [],
-    "links": [],
+    "links": [
+      {
+        "label": "Visit NFL ALL DAY",
+        "url": "https://nflallday.com/search"
+      }
+    ],
     "images": [
       {
         "src": "/images/projects/nfl-all-day.svg",
@@ -553,32 +504,40 @@
         {
           "id": "product",
           "title": "The product",
-          "navigationLabel": "Product",
-          "body": "NFL ALL DAY included web purchasing experiences that guided users through a commerce flow."
+          "body": "NFL ALL DAY is a marketplace and digital collectibles experience built around officially licensed NFL moments represented as NFTs. Fans can purchase and collect moments, bringing commerce and digital ownership into an interactive sports experience.",
+          "navigationLabel": "Product"
         },
         {
           "id": "engagement",
           "title": "My engagement",
-          "navigationLabel": "Engagement",
-          "body": "I contributed product engineering work to the purchasing experience using Next.js, server rendering, and XState."
+          "body": "I worked on the initial version of NFL ALL DAY, contributing to the early product experience and purchasing workflows. My work included the initial landing page and NFT purchase flow involving FLOW blockchain transactions, as well as collectible cards and moment reveal animations.\n\nThose pieces supported different parts of the same marketplace journey: introducing the product, moving through a purchase, and experiencing a collectible moment. I contributed to that client-side journey within the wider platform effort, rather than building the blockchain infrastructure.\n\nI used Next.js and server-side rendering for the web application, alongside XState for application state management. I also worked on an internal component library that supported consistency across the initial application. My scope combined purchasing behavior, interactive collectibles, and reusable client foundations.",
+          "navigationLabel": "Engagement"
         },
         {
           "id": "engineering-work",
           "title": "Engineering work",
-          "navigationLabel": "Engineering work",
           "body": "",
           "engineeringContributions": [
             {
-              "heading": "Purchasing flows with explicit state",
-              "body": "I contributed to server-rendered purchasing experiences in Next.js with XState-based state handling. This combined web delivery with an explicit representation of the purchasing flow, making state part of how the application handled the user’s progress."
+              "heading": "Initial marketplace and purchasing experience",
+              "body": "I contributed to the initial landing page and early NFT purchasing flow, including integration with FLOW-based digital asset transactions. This connected the product’s entry experience with the commerce interactions required to acquire collectible moments."
+            },
+            {
+              "heading": "NFT moments and reveal interactions",
+              "body": "I worked on collectible cards and animated moment reveals. The reveal was part of how fans encountered a digital collectible, connecting its presentation with the experience of discovering the NFL moment rather than serving only as decoration."
+            },
+            {
+              "heading": "State management and reusable foundations",
+              "body": "I used XState to model application workflow states and contributed to an internal component library. Together with Next.js and server rendering, these provided foundations for the initial marketplace’s behavior and consistent presentation."
             }
-          ]
+          ],
+          "navigationLabel": "Engineering work"
         },
         {
           "id": "reflections",
           "title": "Delivery and reflection",
-          "navigationLabel": "Delivery & reflection",
-          "body": "My work contributed to the purchasing experience within the wider product. Its technical focus was the relationship between server rendering and explicit application state during a commerce journey."
+          "body": "My work contributed to an early marketplace experience where purchasing, digital ownership, and interactive collectibles came together. It reinforced the need to treat transaction workflows and collectible presentation as connected parts of a product, supported by explicit state and reusable components.",
+          "navigationLabel": "Delivery & reflection"
         }
       ],
       "format": "narrative",
@@ -589,21 +548,19 @@
     "id": "ihlad",
     "slug": "ihlad",
     "title": "IHLAD",
-    "category": [
-      "Mobile"
-    ],
-    "summary": "A current React Native and Expo engagement.",
+    "category": ["Mobile"],
+    "summary": "A three-week React Native and Expo engagement supporting appointment, preparation, partner-visit, and Home experiences.",
     "role": "React Native / Expo engineer",
     "ownership": "React Native / Expo engineer",
-    "stack": [
-      "React Native",
-      "Expo"
-    ],
-    "status": "Current",
+    "stack": ["React Native", "Expo"],
+    "status": "Published",
     "visibility": "public",
     "featured": false,
     "challenges": [],
-    "contributions": [],
+    "contributions": [
+      "Implemented targeted appointment-detail and preparation-related improvements.",
+      "Contributed to partner-visit flows and Week 7 Home content within an existing mobile application."
+    ],
     "decisions": [],
     "outcomes": [],
     "metrics": [],
@@ -622,41 +579,57 @@
         {
           "id": "product",
           "title": "The product",
-          "navigationLabel": "Product",
-          "body": "IHLAD is a current mobile application engagement. Product details have not yet been published."
+          "body": "IHLAD’s mobile application supports patient-facing healthcare experiences, including appointments, preparation information, care interactions, and related health services.",
+          "navigationLabel": "Product"
         },
         {
           "id": "engagement",
           "title": "My engagement",
-          "navigationLabel": "Engagement",
-          "body": "I am working as a React Native and Expo engineer on the engagement."
+          "body": "I joined an existing React Native and Expo codebase for a short engagement of approximately three weeks, backfilling an absent engineer to support ongoing mobile delivery. My first responsibility was to understand the existing application architecture and established product flows well enough to make targeted changes within the team’s conventions.\n\nThe work covered appointment-detail experiences, preparation-related information, partner-visit flows, and Week 7 Home content. I contributed within the application’s existing structure rather than introducing a new architecture.\n\nThe limited engagement called for a focused scope: become familiar with an unfamiliar healthcare product, implement the requested mobile improvements, and support continuity during the staffing gap. My role was feature delivery within an established team and codebase, not responsibility for the application as a whole.",
+          "navigationLabel": "Engagement"
         },
         {
           "id": "engineering-work",
           "title": "Engineering work",
-          "navigationLabel": "Engineering work",
-          "body": "Specific engineering contributions have not yet been published."
+          "body": "",
+          "engineeringContributions": [
+            {
+              "heading": "Appointment and preparation experiences",
+              "body": "I implemented targeted improvements to appointment details and preparation-related interfaces within the existing React Native and Expo application. The work connected patient-facing appointment information with the preparation content associated with the care journey, following the application’s established flows."
+            },
+            {
+              "heading": "Mobile product delivery within an existing codebase",
+              "body": "I contributed changes to partner-visit flows and Week 7 Home content after becoming familiar with the application’s architecture and conventions. These were focused delivery contributions that supported the team during a temporary staffing gap, rather than a redesign of the mobile system."
+            }
+          ],
+          "navigationLabel": "Engineering work"
         },
         {
           "id": "reflections",
           "title": "Delivery and reflection",
-          "navigationLabel": "Delivery & reflection",
-          "body": "The engagement is ongoing. Delivery outcomes and reflections have not yet been published."
+          "body": "The engagement delivered targeted mobile improvements across appointment, preparation, partner-visit, and Home experiences. It reinforced the importance of understanding existing product flows quickly and making changes that fit the team’s conventions, especially when supporting a product for a short period.",
+          "navigationLabel": "Delivery & reflection"
         }
       ],
       "format": "narrative",
-      "tableOfContents": true
+      "tableOfContents": true,
+      "metadata": [
+        {
+          "label": "Duration",
+          "value": "Approximately three weeks"
+        },
+        {
+          "label": "Role",
+          "value": "React Native / Expo engineer"
+        }
+      ]
     }
   },
   {
     "id": "global-villages",
     "slug": "global-villages",
     "title": "Global Villages",
-    "category": [
-      "Commerce",
-      "Mobile",
-      "Web"
-    ],
+    "category": ["Commerce", "Mobile", "Web"],
     "summary": "Shared marketplace experiences across web and mobile.",
     "role": "Cross-platform engineering contributor",
     "ownership": "Cross-platform engineering contributor",
@@ -689,60 +662,19 @@
       }
     ],
     "caseStudy": {
-      "sections": [
-        {
-          "id": "product",
-          "title": "The product",
-          "navigationLabel": "Product",
-          "body": "Global Villages was a marketplace with web and mobile experiences."
-        },
-        {
-          "id": "engagement",
-          "title": "My engagement",
-          "navigationLabel": "Engagement",
-          "body": "I contributed to cross-platform engineering using React Native, Next.js, and TypeScript, including shared marketplace architecture, authentication, and payments."
-        },
-        {
-          "id": "engineering-work",
-          "title": "Engineering work",
-          "navigationLabel": "Engineering work",
-          "body": "",
-          "engineeringContributions": [
-            {
-              "heading": "Shared web and mobile foundations",
-              "body": "I contributed to the marketplace architecture across React Native and Next.js. The work focused on shared foundations for a product delivered through both web and mobile clients."
-            },
-            {
-              "heading": "Authentication and payment integration",
-              "body": "I integrated authentication and payment capabilities into the marketplace experience. This connected account access and checkout to the services supporting those operations, extending the client work beyond presenting marketplace content."
-            }
-          ]
-        },
-        {
-          "id": "reflections",
-          "title": "Delivery and reflection",
-          "navigationLabel": "Delivery & reflection",
-          "body": "My contributions spanned shared client foundations and the integrations needed for marketplace access and payment. The engagement brought cross-platform application work together with the service boundaries of a commerce product."
-        }
-      ],
       "format": "narrative",
-      "tableOfContents": true
+      "sections": []
     }
   },
   {
     "id": "mart",
     "slug": "mart",
     "title": "Mart",
-    "category": [
-      "Commerce",
-      "Mobile"
-    ],
+    "category": ["Commerce", "Mobile"],
     "summary": "Ordering, visitor checkout, and fulfillment on mobile.",
     "role": "React Native contributor",
     "ownership": "React Native contributor",
-    "stack": [
-      "React Native"
-    ],
+    "stack": ["React Native"],
     "status": "Published",
     "visibility": "public",
     "featured": false,
@@ -772,40 +704,8 @@
       }
     ],
     "caseStudy": {
-      "sections": [
-        {
-          "id": "product",
-          "title": "The product",
-          "navigationLabel": "Product",
-          "body": "Mart supported mobile ordering, visitor checkout, and fulfillment, with a Picker App initiative focused on the fulfillment side of the service."
-        },
-        {
-          "id": "engagement",
-          "title": "My engagement",
-          "navigationLabel": "Engagement",
-          "body": "I contributed as a React Native engineer across ordering, visitor checkout, and fulfillment experiences, including the Picker App initiative."
-        },
-        {
-          "id": "engineering-work",
-          "title": "Engineering work",
-          "navigationLabel": "Engineering work",
-          "body": "",
-          "engineeringContributions": [
-            {
-              "heading": "Ordering and fulfillment workflows",
-              "body": "I contributed to the mobile workflows spanning order placement, visitor checkout, and fulfillment, including work on the Picker App initiative. This scope connected customer-facing commerce with the operational side of fulfilling orders."
-            }
-          ]
-        },
-        {
-          "id": "reflections",
-          "title": "Delivery and reflection",
-          "navigationLabel": "Delivery & reflection",
-          "body": "My contributions covered parts of both the ordering and fulfillment experiences. The work reinforced the value of understanding the operational journey behind a mobile purchase, alongside the customer-facing flow."
-        }
-      ],
       "format": "narrative",
-      "tableOfContents": true
+      "sections": []
     }
   }
 ]

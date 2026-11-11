@@ -168,16 +168,22 @@ test('professional studies use four sections and evidence-sized engineering list
   const expectedCounts: Record<string, number> = {
     concrete: 3,
     'reka-ai': 3,
-    cardata: 2,
-    plaiday: 1,
-    'nfl-all-day': 1,
-    'global-villages': 2,
-    mart: 1,
-    ihlad: 0,
+    plaiday: 3,
+    'nfl-all-day': 3,
+    ihlad: 2,
   };
   for (const project of await jsonRepository.getProjects()) {
     if (project.slug === 'dcp-plus') continue;
     assert.equal(project.caseStudy.format, 'narrative');
+    if (['cardata', 'global-villages', 'mart'].includes(project.slug)) {
+      assert.deepEqual(project.caseStudy.sections, []);
+      assert.ok(!project.caseStudy.tableOfContents);
+      assert.ok(project.summary && project.role);
+      continue;
+    }
+    const engagementWords =
+      project.caseStudy.sections[1].body.split(/\s+/).length;
+    assert.ok(engagementWords >= 100 && engagementWords <= 160, project.slug);
     assert.deepEqual(
       project.caseStudy.sections.map(({ title }) => title),
       [
@@ -250,5 +256,33 @@ test('AgentVault lab entry has public demo and source links', async () => {
       'https://web-navy-pi-61.vercel.app',
       'https://github.com/ugbechike/agentvault',
     ],
+  );
+});
+
+test('launch content retains official links and treats IHLAD as completed work', async () => {
+  const expected: Record<string, string> = {
+    concrete: 'https://app.concrete.xyz/earn',
+    'dcp-plus': 'https://dcp.watch/',
+    'reka-ai': 'https://reka.ai/',
+    cardata: 'https://cardata.co/features/cardata-mobile',
+    'nfl-all-day': 'https://nflallday.com/search',
+  };
+  for (const [slug, url] of Object.entries(expected)) {
+    assert.ok(
+      (await jsonRepository.getProjectBySlug(slug))?.links.some(
+        (link) => link.url === url,
+      ),
+    );
+  }
+  const projects = await jsonRepository.getProjects();
+  const ihlad = projects.find((project) => project.slug === 'ihlad');
+  assert.equal(ihlad?.status, 'Published');
+  assert.match(
+    ihlad?.caseStudy.sections[1].body ?? '',
+    /approximately three weeks/,
+  );
+  assert.equal(
+    projects.findIndex((project) => project.slug === 'ihlad') + 1,
+    projects.findIndex((project) => project.slug === 'global-villages'),
   );
 });

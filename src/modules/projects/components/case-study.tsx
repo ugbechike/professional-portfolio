@@ -79,29 +79,27 @@ export const CaseStudy = ({ project }: { project: Project }) => (
           )}
         </div>
       )}
-      {project.caseStudy.tableOfContents && (
-        <nav className="case-study-contents" aria-label="Case study contents">
-          <p className="eyebrow">{'// in this case study'}</p>
-          <ul>
-            {project.caseStudy.sections.map((section) => (
-              <li key={section.id}>
-                <a href={`#${section.id}`}>
-                  {section.navigationLabel ?? section.title}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      )}
+      {project.caseStudy.tableOfContents &&
+        project.caseStudy.sections.length > 0 && (
+          <nav className="case-study-contents" aria-label="Case study contents">
+            <p className="eyebrow">{'// in this case study'}</p>
+            <ul>
+              {project.caseStudy.sections.map((section) => (
+                <li key={section.id}>
+                  <a href={`#${section.id}`}>
+                    {section.navigationLabel ?? section.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
     </header>
     <div className="detail-layout">
       <div className="prose">
         {!project.caseStudy.sections.length && (
           <section>
-            <p>
-              Full case study not yet published. The engagement details below
-              reflect the work shared so far.
-            </p>
+            <p>Case study in progress.</p>
           </section>
         )}
         {project.caseStudy.sections.map((section) => (
@@ -152,44 +150,45 @@ export const CaseStudy = ({ project }: { project: Project }) => (
             )}
           </section>
         ))}
-        {project.caseStudy.format !== 'narrative' && (
-          <>
-            <ListSection
-              title="The engineering challenges"
-              items={project.challenges}
-            />
-            <ListSection
-              title="My contributions"
-              items={project.contributions}
-            />
-            <ListSection
-              title="Engineering decisions"
-              items={project.decisions}
-            />
-            <ListSection title="Outcomes" items={project.outcomes} />
-            {project.metrics.length > 0 && (
-              <section>
-                <h2>Results, with context.</h2>
-                <div className="metrics">
-                  {project.metrics.map((metric) => (
-                    <div className="metric" key={metric.label}>
-                      <span className="badge">
-                        {metric.scope === 'development'
-                          ? 'Local development observation'
-                          : `${metric.scope} outcome`}
-                      </span>
-                      <div>
-                        <strong>{metric.value}</strong>
+        {project.caseStudy.sections.length > 0 &&
+          project.caseStudy.format !== 'narrative' && (
+            <>
+              <ListSection
+                title="The engineering challenges"
+                items={project.challenges}
+              />
+              <ListSection
+                title="My contributions"
+                items={project.contributions}
+              />
+              <ListSection
+                title="Engineering decisions"
+                items={project.decisions}
+              />
+              <ListSection title="Outcomes" items={project.outcomes} />
+              {project.metrics.length > 0 && (
+                <section>
+                  <h2>Results, with context.</h2>
+                  <div className="metrics">
+                    {project.metrics.map((metric) => (
+                      <div className="metric" key={metric.label}>
+                        <span className="badge">
+                          {metric.scope === 'development'
+                            ? 'Local development observation'
+                            : `${metric.scope} outcome`}
+                        </span>
+                        <div>
+                          <strong>{metric.value}</strong>
+                        </div>
+                        <h3>{metric.label}</h3>
+                        <p>{metric.context}</p>
                       </div>
-                      <h3>{metric.label}</h3>
-                      <p>{metric.context}</p>
-                    </div>
-                  ))}
-                </div>
-              </section>
-            )}
-          </>
-        )}
+                    ))}
+                  </div>
+                </section>
+              )}
+            </>
+          )}
         <Link className="text-link" href="/work">
           Explore more work <ArrowUpRight size={16} />
         </Link>
