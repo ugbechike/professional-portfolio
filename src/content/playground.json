@@ -1,5 +1,50 @@
 [
   {
+    "id": "agentvault",
+    "slug": "agentvault",
+    "title": "AgentVault",
+    "summary": "An MCP gateway and permission broker that controls which external tools an AI agent can access, with scoped permissions and an audit trail.",
+    "status": "Prototype",
+    "featured": true,
+    "visibility": "public",
+    "stack": [
+      "TypeScript",
+      "Next.js",
+      "Fastify",
+      "MCP",
+      "OAuth",
+      "PostgreSQL"
+    ],
+    "links": [
+      {
+        "label": "View demo",
+        "url": "https://web-navy-pi-61.vercel.app"
+      },
+      {
+        "label": "GitHub repository",
+        "url": "https://github.com/ugbechike/agentvault"
+      }
+    ],
+    "technicalNotes": [],
+    "images": [],
+    "caseStudy": {
+      "sections": [
+        {
+          "title": "The idea",
+          "body": "AgentVault explores a practical problem in AI agent tooling: connecting agents to external services while retaining control over what each agent is allowed to do. It brings provider connections, agent registration, permissions, and tool activity into one interface."
+        },
+        {
+          "title": "Engineering the gateway",
+          "body": "I built a Next.js dashboard and Fastify API around an MCP gateway. It authenticates MCP clients, discovers available upstream tools, and evaluates access before each invocation. Provider grants, agent capabilities, tool policies, and resource scopes are combined into an effective permission decision, with execution and denial events recorded for review."
+        },
+        {
+          "title": "Demo scope",
+          "body": "The hosted prototype uses a provisioned demo account and a demonstration MCP provider. GitHub and Supabase connector adapters are present in the codebase but are not enabled in the public demo. The repository documents the architecture and setup."
+        }
+      ]
+    }
+  },
+  {
     "id": "devmirror",
     "slug": "devmirror",
     "title": "DevMirror",
