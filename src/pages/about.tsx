@@ -1,5 +1,6 @@
 import type { InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ExperienceList } from '@/components/experience/experience-list';
 import { Layout } from '@/components/layout/layout';
 import { Seo } from '@/components/ui/seo';
@@ -24,7 +25,14 @@ const About = ({
         <div className="eyebrow">{'// about'}</div>
         <h1>Hi, I’m John.</h1>
       </header>
-      <div className="portrait-pending">Portrait to follow.</div>
+      <Image
+        className="about-portrait"
+        src="/images/john-ugbe-portrait.png"
+        alt="Monochrome illustrated portrait of John Ugbe"
+        width={1164}
+        height={1351}
+        sizes="(max-width: 448px) calc(100vw - 48px), 400px"
+      />
       <div className="prose">
         <p>{site.profile.bio}</p>
       </div>

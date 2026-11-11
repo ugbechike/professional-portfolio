@@ -447,11 +447,12 @@ time {
   font-size: 18px;
   margin-bottom: 12px;
 }
-.portrait-pending {
-  font: 12px var(--display);
-  color: var(--muted);
-  margin-bottom: 28px;
-  padding-block: 12px;
+.about-portrait {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-bottom: 32px;
 }
 .timeline {
   list-style: none;
