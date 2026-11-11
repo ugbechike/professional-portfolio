@@ -3,7 +3,11 @@
     "id": "dcp-plus",
     "slug": "dcp-plus",
     "title": "DCP+",
-    "category": ["Streaming", "Web", "Connected TV"],
+    "category": [
+      "Streaming",
+      "Web",
+      "Connected TV"
+    ],
     "summary": "Engineering a streaming platform across web and connected TV.",
     "role": "Senior Software Engineer",
     "ownership": "Primary engineer responsible for the client applications from August 2025, embedded within the DCP+ engineering team.",
@@ -137,7 +141,10 @@
     "id": "concrete",
     "slug": "concrete",
     "title": "Concrete Finance",
-    "category": ["Fintech / DeFi", "Web"],
+    "category": [
+      "Fintech / DeFi",
+      "Web"
+    ],
     "summary": "Owned the complete Concrete Earn client, from wallet identity to smart-contract transactions and portfolio views; contributed to Concrete Borrow.",
     "role": "Client implementation owner, Concrete Earn · contributor, Concrete Borrow",
     "ownership": "Full ownership of the Concrete Earn frontend implementation; contributor to Concrete Borrow alongside other engineers.",
@@ -251,7 +258,10 @@
     "id": "reka-ai",
     "slug": "reka-ai",
     "title": "Reka AI",
-    "category": ["AI", "Web"],
+    "category": [
+      "AI",
+      "Web"
+    ],
     "summary": "Sole client-side engineer for a greenfield AI research app, integrating model fine-tuning through Python APIs and streaming conversations.",
     "role": "Sole client-side engineer",
     "ownership": "Sole client-side engineer on a greenfield AI research application, beginning in March 2023.",
@@ -350,11 +360,17 @@
     "id": "cardata",
     "slug": "cardata",
     "title": "Cardata",
-    "category": ["Mobile"],
+    "category": [
+      "Mobile"
+    ],
     "summary": "React Native work on app lifecycle, iOS location and motion permissions, trip tracking, and dashboard synchronization.",
     "role": "React Native engineer",
     "ownership": "React Native engineer",
-    "stack": ["React Native", "iOS", "Native integrations"],
+    "stack": [
+      "React Native",
+      "iOS",
+      "Native integrations"
+    ],
     "status": "Published",
     "visibility": "public",
     "featured": true,
@@ -429,11 +445,16 @@
     "id": "plaiday",
     "slug": "plaiday",
     "title": "PlaiDay",
-    "category": ["AI", "Mobile"],
+    "category": [
+      "AI",
+      "Mobile"
+    ],
     "summary": "AI image-generation workflows on mobile.",
     "role": "React Native contributor",
     "ownership": "React Native contributor",
-    "stack": ["React Native"],
+    "stack": [
+      "React Native"
+    ],
     "status": "Published",
     "visibility": "public",
     "featured": false,
@@ -495,11 +516,18 @@
     "id": "nfl-all-day",
     "slug": "nfl-all-day",
     "title": "NFL ALL DAY",
-    "category": ["Commerce", "Web"],
+    "category": [
+      "Commerce",
+      "Web"
+    ],
     "summary": "Purchasing experiences with server rendering and explicit state.",
     "role": "Product engineering contributor",
     "ownership": "Product engineering contributor",
-    "stack": ["Next.js", "SSR", "XState"],
+    "stack": [
+      "Next.js",
+      "SSR",
+      "XState"
+    ],
     "status": "Published",
     "visibility": "public",
     "featured": false,
@@ -558,10 +586,77 @@
     }
   },
   {
+    "id": "ihlad",
+    "slug": "ihlad",
+    "title": "IHLAD",
+    "category": [
+      "Mobile"
+    ],
+    "summary": "A current React Native and Expo engagement.",
+    "role": "React Native / Expo engineer",
+    "ownership": "React Native / Expo engineer",
+    "stack": [
+      "React Native",
+      "Expo"
+    ],
+    "status": "Current",
+    "visibility": "public",
+    "featured": false,
+    "challenges": [],
+    "contributions": [],
+    "decisions": [],
+    "outcomes": [],
+    "metrics": [],
+    "links": [],
+    "images": [
+      {
+        "src": "/images/projects/ihlad.svg",
+        "alt": "Abstract editorial artwork for IHLAD; not a product screenshot",
+        "width": 1000,
+        "height": 680,
+        "kind": "illustration"
+      }
+    ],
+    "caseStudy": {
+      "sections": [
+        {
+          "id": "product",
+          "title": "The product",
+          "navigationLabel": "Product",
+          "body": "IHLAD is a current mobile application engagement. Product details have not yet been published."
+        },
+        {
+          "id": "engagement",
+          "title": "My engagement",
+          "navigationLabel": "Engagement",
+          "body": "I am working as a React Native and Expo engineer on the engagement."
+        },
+        {
+          "id": "engineering-work",
+          "title": "Engineering work",
+          "navigationLabel": "Engineering work",
+          "body": "Specific engineering contributions have not yet been published."
+        },
+        {
+          "id": "reflections",
+          "title": "Delivery and reflection",
+          "navigationLabel": "Delivery & reflection",
+          "body": "The engagement is ongoing. Delivery outcomes and reflections have not yet been published."
+        }
+      ],
+      "format": "narrative",
+      "tableOfContents": true
+    }
+  },
+  {
     "id": "global-villages",
     "slug": "global-villages",
     "title": "Global Villages",
-    "category": ["Commerce", "Mobile", "Web"],
+    "category": [
+      "Commerce",
+      "Mobile",
+      "Web"
+    ],
     "summary": "Shared marketplace experiences across web and mobile.",
     "role": "Cross-platform engineering contributor",
     "ownership": "Cross-platform engineering contributor",
@@ -638,11 +733,16 @@
     "id": "mart",
     "slug": "mart",
     "title": "Mart",
-    "category": ["Commerce", "Mobile"],
+    "category": [
+      "Commerce",
+      "Mobile"
+    ],
     "summary": "Ordering, visitor checkout, and fulfillment on mobile.",
     "role": "React Native contributor",
     "ownership": "React Native contributor",
-    "stack": ["React Native"],
+    "stack": [
+      "React Native"
+    ],
     "status": "Published",
     "visibility": "public",
     "featured": false,
@@ -702,64 +802,6 @@
           "title": "Delivery and reflection",
           "navigationLabel": "Delivery & reflection",
           "body": "My contributions covered parts of both the ordering and fulfillment experiences. The work reinforced the value of understanding the operational journey behind a mobile purchase, alongside the customer-facing flow."
-        }
-      ],
-      "format": "narrative",
-      "tableOfContents": true
-    }
-  },
-  {
-    "id": "ihlad",
-    "slug": "ihlad",
-    "title": "IHLAD",
-    "category": ["Mobile"],
-    "summary": "A current React Native and Expo engagement.",
-    "role": "React Native / Expo engineer",
-    "ownership": "React Native / Expo engineer",
-    "stack": ["React Native", "Expo"],
-    "status": "Current",
-    "visibility": "public",
-    "featured": false,
-    "challenges": [],
-    "contributions": [],
-    "decisions": [],
-    "outcomes": [],
-    "metrics": [],
-    "links": [],
-    "images": [
-      {
-        "src": "/images/projects/ihlad.svg",
-        "alt": "Abstract editorial artwork for IHLAD; not a product screenshot",
-        "width": 1000,
-        "height": 680,
-        "kind": "illustration"
-      }
-    ],
-    "caseStudy": {
-      "sections": [
-        {
-          "id": "product",
-          "title": "The product",
-          "navigationLabel": "Product",
-          "body": "IHLAD is a current mobile application engagement. Product details have not yet been published."
-        },
-        {
-          "id": "engagement",
-          "title": "My engagement",
-          "navigationLabel": "Engagement",
-          "body": "I am working as a React Native and Expo engineer on the engagement."
-        },
-        {
-          "id": "engineering-work",
-          "title": "Engineering work",
-          "navigationLabel": "Engineering work",
-          "body": "Specific engineering contributions have not yet been published."
-        },
-        {
-          "id": "reflections",
-          "title": "Delivery and reflection",
-          "navigationLabel": "Delivery & reflection",
-          "body": "The engagement is ongoing. Delivery outcomes and reflections have not yet been published."
         }
       ],
       "format": "narrative",
