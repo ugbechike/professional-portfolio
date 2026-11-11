@@ -18,7 +18,7 @@ test('all supplied content validates and resolves through the repository', async
       project,
     );
   assert.equal(await jsonRepository.getProjectBySlug('missing'), null);
-  assert.equal((await jsonRepository.getPlaygroundProjects()).length, 4);
+  assert.equal((await jsonRepository.getPlaygroundProjects()).length, 5);
   assert.deepEqual(await jsonRepository.getNotes(), []);
   assert.ok(await jsonRepository.getProfile());
 });
@@ -234,5 +234,21 @@ test('engineering contribution schema rejects empty or oversized lists', async (
       ],
     }).success,
     true,
+  );
+});
+
+test('AgentVault lab entry has public demo and source links', async () => {
+  const projects = await jsonRepository.getPlaygroundProjects();
+  const agentVault = projects.find(({ slug }) => slug === 'agentvault');
+  assert.ok(agentVault);
+  assert.equal(agentVault.status, 'Prototype');
+  assert.equal(agentVault.visibility, 'public');
+  assert.equal(agentVault.featured, true);
+  assert.deepEqual(
+    agentVault.links.map(({ url }) => url),
+    [
+      'https://web-navy-pi-61.vercel.app',
+      'https://github.com/ugbechike/agentvault',
+    ],
   );
 });
