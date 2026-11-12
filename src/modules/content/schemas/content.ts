@@ -85,6 +85,16 @@ const publication = {
 export const professionalProjectSchema = z.object({
   ...publication,
   category: z.array(z.string()),
+  engagementPeriod: z
+    .object({
+      startYear: z.number().int().min(1900).max(2100),
+      endYear: z.number().int().min(1900).max(2100),
+    })
+    .refine(
+      ({ startYear, endYear }) => endYear >= startYear,
+      'Engagement years must be chronological',
+    )
+    .optional(),
   summary: z.string(),
   role: z.string(),
   ownership: z.string(),

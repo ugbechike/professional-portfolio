@@ -131,6 +131,10 @@
           "body": "The engagement produced a live streaming web product and an end-to-end purchase-to-playback journey. A real purchase settled on-chain and became playable in March 2026. Safari DRM playback followed in April, the web service and Cannes beta in May, and a production web release in July. In October, I prepared the v0.3.0 release package, bringing together later work on episodic content, subscriptions, advertising, settlement, and recovery.\n\nAdditional contributions made the product easier to operate. I implemented VAST advertising behavior that allowed content to continue when inventory was empty or ad requests failed. Localization automation connected a scoped Laravel import endpoint to CI publishing, using merge-safe updates and translation diagnostics to replace manual resource imports in development and staging.\n\nThis work reinforced how much reliable delivery depends on understanding the complete product journey. Clear route responsibilities, explicit transaction state, and evidence-led playback investigations made complex integrations easier to explain and maintain. Being embedded in the team let me connect those technical decisions to product requirements and carry them through implementation, validation, and release preparation."
         }
       ]
+    },
+    "engagementPeriod": {
+      "startYear": 2025,
+      "endYear": 2026
     }
   },
   {
@@ -245,6 +249,10 @@
           "body": "My work delivered the Earn client experience and targeted contributions to Borrow. The engagement reinforced the importance of making financial information and transaction authorization understandable together, with clear boundaries between what the client displayed and what users signed."
         }
       ]
+    },
+    "engagementPeriod": {
+      "startYear": 2024,
+      "endYear": 2025
     }
   },
   {
@@ -344,6 +352,10 @@
           "body": "The application brought token-based access, model customization, and streaming conversations together. Building it strengthened my approach to greenfield engineering: define the client’s responsibilities around the user journey and validate those responsibilities against the capabilities of the underlying services."
         }
       ]
+    },
+    "engagementPeriod": {
+      "startYear": 2023,
+      "endYear": 2023
     }
   },
   {
@@ -387,6 +399,10 @@
     "caseStudy": {
       "format": "narrative",
       "sections": []
+    },
+    "engagementPeriod": {
+      "startYear": 2023,
+      "endYear": 2023
     }
   },
   {
@@ -462,6 +478,10 @@
       ],
       "format": "narrative",
       "tableOfContents": true
+    },
+    "engagementPeriod": {
+      "startYear": 2024,
+      "endYear": 2024
     }
   },
   {
@@ -542,6 +562,10 @@
       ],
       "format": "narrative",
       "tableOfContents": true
+    },
+    "engagementPeriod": {
+      "startYear": 2021,
+      "endYear": 2022
     }
   },
   {
@@ -623,6 +647,10 @@
           "value": "React Native / Expo engineer"
         }
       ]
+    },
+    "engagementPeriod": {
+      "startYear": 2026,
+      "endYear": 2026
     }
   },
   {

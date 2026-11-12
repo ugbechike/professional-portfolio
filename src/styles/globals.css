@@ -248,8 +248,65 @@ button:focus-visible {
 }
 .employer-clients {
   margin-top: 28px;
-  padding-left: 24px;
-  border-left: 1px dashed var(--line);
+}
+.engagement-timeline {
+  position: relative;
+}
+.engagement-timeline ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.engagement-track,
+.engagement-progress {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 3px;
+  width: 1px;
+  pointer-events: none;
+}
+.engagement-track {
+  background: var(--line);
+}
+.engagement-progress {
+  background: var(--muted);
+  transform-origin: top;
+}
+.engagement-entry {
+  position: relative;
+  padding: 0 0 0 28px;
+}
+.engagement-content {
+  padding: 20px 0 24px;
+  border-top: 1px dashed var(--line);
+}
+.engagement-entry:last-child .engagement-content {
+  border-bottom: 1px dashed var(--line);
+}
+.engagement-node {
+  position: absolute;
+  left: 0;
+  top: 29px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--muted);
+}
+.engagement-period {
+  font: 12px/1.8 var(--display);
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .engagement-progress {
+    display: none;
+  }
+  .engagement-content,
+  .engagement-node {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 .client-group-label {
   color: var(--muted);
@@ -257,8 +314,8 @@ button:focus-visible {
   margin-bottom: 16px;
 }
 @media (max-width: 640px) {
-  .employer-clients {
-    padding-left: 16px;
+  .engagement-entry {
+    padding-left: 22px;
   }
 }
 .employer-heading {

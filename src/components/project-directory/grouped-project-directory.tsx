@@ -1,7 +1,7 @@
 import type { Experience, Project } from '@/modules/content/types/content';
 import Link from 'next/link';
 import { groupProjects } from '@/modules/projects/services/group-projects';
-import { ProjectDirectory } from './project-directory';
+import { EngagementTimeline } from './engagement-timeline';
 
 const monthYear = (date: string) =>
   new Intl.DateTimeFormat('en', {
@@ -63,7 +63,7 @@ export const GroupedProjectDirectory = ({
               <p className="client-group-label">
                 Client engagements at {experience.company}
               </p>
-              <ProjectDirectory projects={entries} showTechnologies={false} />
+              <EngagementTimeline projects={entries} />
             </div>
           )}
         </section>

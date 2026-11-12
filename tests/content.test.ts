@@ -307,12 +307,12 @@ test('employer relationships group every project once and survive category filte
       [
         'lazer-technologies',
         [
+          'ihlad',
           'dcp-plus',
           'concrete',
-          'reka-ai',
           'plaiday',
           'cardata',
-          'ihlad',
+          'reka-ai',
           'nfl-all-day',
         ],
       ],
@@ -367,5 +367,57 @@ test('employer grouping rejects duplicate relationships and omitted public proje
   assert.throws(
     () => groupProjects(projects, [...experiences, experiences[0]]),
     /multiple employers/,
+  );
+});
+
+test('client timeline uses approximate periods in reverse chronological order', async () => {
+  const { timelineProjects, engagementPeriodLabel } =
+    await import('@/modules/projects/services/timeline-projects');
+  const { groupProjects } =
+    await import('@/modules/projects/services/group-projects');
+  const projects = await jsonRepository.getProjects();
+  const experiences = await jsonRepository.getExperiences();
+  const lazer = groupProjects(projects, experiences).groups[0].projects;
+  const expected = [
+    'ihlad',
+    'dcp-plus',
+    'concrete',
+    'plaiday',
+    'cardata',
+    'reka-ai',
+    'nfl-all-day',
+  ];
+  const timeline = timelineProjects(lazer);
+  assert.deepEqual(
+    timeline.map(({ id }) => id),
+    expected,
+  );
+  assert.deepEqual(timeline.map(engagementPeriodLabel), [
+    '2026',
+    '2025–2026',
+    '2024–2025',
+    '2024',
+    '2023',
+    '2023',
+    '2021–2022',
+  ]);
+  assert.equal(new Set(timeline.map(({ id }) => id)).size, 7);
+  for (const category of new Set(lazer.flatMap(({ category }) => category))) {
+    const matching = lazer.filter((project) =>
+      project.category.includes(category),
+    );
+    assert.deepEqual(
+      timelineProjects(matching).map(({ id }) => id),
+      expected.filter((id) => matching.some((p) => p.id === id)),
+    );
+  }
+  const { professionalProjectSchema } =
+    await import('@/modules/content/schemas/content');
+  assert.equal(
+    professionalProjectSchema.safeParse({
+      ...timeline[0],
+      engagementPeriod: { startYear: 2026, endYear: 2025 },
+    }).success,
+    false,
   );
 });
