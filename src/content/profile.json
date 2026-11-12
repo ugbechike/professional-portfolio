@@ -3,7 +3,7 @@
   "role": "Senior Software Engineer",
   "headline": "I build thoughtful products and reliable systems.",
   "summary": "Over 8 years building and shipping software across web, mobile, fintech, AI, and streaming. I work closely with teams to understand product goals, refine requirements, navigate technical complexity, and deliver software that serves real business needs.",
-  "bio": "I enjoy the space where product ideas meet real engineering constraints. I work alongside product, design, and backend teams to take features from requirements through implementation and delivery. My experience spans web, mobile, and connected devices; my approach stays grounded in curiosity, ownership, and practical problem-solving.",
+  "bio": "I work at the intersection of product thinking and software engineering, turning ideas into practical solutions. My experience spans financial platforms, streaming, mobile applications, and AI-powered products. I'm particularly interested in agentic systems, developer tooling, and how emerging technologies can reshape the way software is built and used.\n\nI enjoy working across the product lifecycle, from understanding the problem and shaping requirements to making architectural decisions and delivering reliable systems.",
   "years": "8+",
   "links": [
     {
@@ -30,5 +30,33 @@
     "Performance & reliability"
   ],
   "email": "engr.ugbechike@gmail.com",
-  "location": "Ontario, Canada"
+  "location": "Ontario, Canada",
+  "engineeringPractice": {
+    "paragraphs": [
+      "That breadth includes building the client application for Reka AI, integrating Python model fine-tuning APIs and streaming conversations. My independent projects explore related engineering questions: AgentVault is an experimental MCP gateway and permission broker for scoped tool access and auditability; DevMirror connects GitHub OAuth, repository data, and pull request analysis to developer contribution insights. DevBrief explores AI-integrated developer tooling through external service integrations.",
+      "AI also supports my day-to-day engineering practice. I regularly use Claude Code, Cursor, and Codex for codebase exploration, implementation, debugging, and architectural planning, while keeping technical decisions and validation grounded in the product and its constraints."
+    ],
+    "links": [
+      {
+        "label": "Reka AI",
+        "href": "/work/reka-ai"
+      },
+      {
+        "label": "AgentVault",
+        "href": "/playground/agentvault"
+      },
+      {
+        "label": "DevMirror",
+        "href": "/playground/devmirror"
+      }
+    ]
+  },
+  "certifications": [
+    {
+      "name": "Claude Certified Architect - Foundations",
+      "issuer": "Anthropic",
+      "issuedAt": "2026-10-31",
+      "url": "https://www.credly.com/badges/53c0c564-e630-465f-8991-03c2157d6c0c"
+    }
+  ]
 }

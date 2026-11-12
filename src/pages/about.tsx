@@ -34,12 +34,59 @@ const About = ({
         sizes="(max-width: 448px) calc(100vw - 48px), 400px"
       />
       <div className="prose">
-        <p>{site.profile.bio}</p>
+        {site.profile.bio.split('\n\n').map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
+        {site.profile.engineeringPractice.paragraphs.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
+        <nav
+          className="about-project-links"
+          aria-label="Related engineering projects"
+        >
+          {site.profile.engineeringPractice.links.map((link) => (
+            <Link className="text-link" key={link.href} href={link.href}>
+              {link.label} →
+            </Link>
+          ))}
+        </nav>
       </div>
       {experiences.length > 0 && (
         <section className="section">
           <h2 className="section-label">{'// experience'}</h2>
           <ExperienceList experiences={experiences} />
+        </section>
+      )}
+      {site.profile.certifications.length > 0 && (
+        <section className="section">
+          <h2 className="section-label">{'// certifications'}</h2>
+          {site.profile.certifications.map((certification) => (
+            <article className="certification" key={certification.url}>
+              <h3>{certification.name}</h3>
+              <p className="certification-meta">
+                {certification.issuer} · Issued{' '}
+                <time dateTime={certification.issuedAt}>
+                  {new Date(certification.issuedAt).toLocaleDateString(
+                    'en-US',
+                    {
+                      month: 'long',
+                      day: 'numeric',
+                      year: 'numeric',
+                      timeZone: 'UTC',
+                    },
+                  )}
+                </time>
+              </p>
+              <a
+                className="text-link"
+                href={certification.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View credential ↗
+              </a>
+            </article>
+          ))}
         </section>
       )}
       <section className="section">

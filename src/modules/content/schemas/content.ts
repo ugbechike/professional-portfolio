@@ -74,6 +74,23 @@ export const profileSchema = z.object({
   email: z.email().optional(),
   links: z.array(externalLinkSchema),
   capabilities: z.array(z.string()),
+  engineeringPractice: z.object({
+    paragraphs: z.array(z.string().min(1)),
+    links: z.array(
+      z.object({
+        label: z.string().min(1),
+        href: z.string().regex(/^\/(?:work|playground)\/[a-z0-9-]+$/),
+      }),
+    ),
+  }),
+  certifications: z.array(
+    z.object({
+      name: z.string().min(1),
+      issuer: z.string().min(1),
+      issuedAt: z.iso.date(),
+      url: externalLinkSchema.shape.url,
+    }),
+  ),
 });
 const publication = {
   id: slug,

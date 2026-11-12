@@ -8,7 +8,35 @@ import {
 import {
   externalLinkSchema,
   impactMetricSchema,
+  profileSchema,
 } from '@/modules/content/schemas/content';
+test('About credentials validate dates and safe links, and related projects resolve', async () => {
+  const profile = await jsonRepository.getProfile();
+  const certification = profile.certifications[0];
+  assert.equal(certification.name, 'Claude Certified Architect - Foundations');
+  assert.equal(certification.issuer, 'Anthropic');
+  assert.equal(certification.issuedAt, '2026-10-31');
+  for (const invalid of [
+    { issuedAt: '2026-02-30' },
+    { url: 'javascript:alert(1)' },
+  ]) {
+    assert.equal(
+      profileSchema.safeParse({
+        ...profile,
+        certifications: [{ ...certification, ...invalid }],
+      }).success,
+      false,
+    );
+  }
+  const projects = await jsonRepository.getProjects();
+  const lab = await jsonRepository.getPlaygroundProjects();
+  const routes = new Set([
+    ...projects.map((project) => `/work/${project.slug}`),
+    ...lab.map((project) => `/playground/${project.slug}`),
+  ]);
+  for (const link of profile.engineeringPractice.links)
+    assert.ok(routes.has(link.href));
+});
 test('all supplied content validates and resolves through the repository', async () => {
   const projects = await jsonRepository.getProjects();
   assert.equal(projects.length, 9);

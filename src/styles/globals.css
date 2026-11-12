@@ -552,6 +552,25 @@ time {
   height: auto;
   margin-bottom: 32px;
 }
+.about-project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-bottom: 32px;
+}
+.certification {
+  border-top: 1px dashed var(--line);
+  padding-top: 20px;
+}
+.certification h3 {
+  font: 500 17px/1.5 var(--display);
+  margin-bottom: 8px;
+}
+.certification-meta {
+  color: var(--muted);
+  font: 13px/1.7 var(--display);
+  margin-bottom: 8px;
+}
 .timeline {
   list-style: none;
   padding: 0;
