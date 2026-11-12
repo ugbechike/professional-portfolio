@@ -574,6 +574,12 @@ time {
   font: 13px/1.7 var(--display);
   margin-bottom: 8px;
 }
+.certification-preview {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 20px 0 12px;
+}
 .timeline {
   list-style: none;
   padding: 0;

@@ -77,6 +77,16 @@ const About = ({
                   )}
                 </time>
               </p>
+              {certification.preview && (
+                <Image
+                  className="certification-preview"
+                  src={certification.preview.src}
+                  alt={certification.preview.alt}
+                  width={certification.preview.width}
+                  height={certification.preview.height}
+                  sizes="(max-width: 720px) calc(100vw - 48px), 672px"
+                />
+              )}
               <div className="certification-links">
                 <a
                   className="text-link"
@@ -93,7 +103,7 @@ const About = ({
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Preview certificate (PDF) ↗
+                    Open original PDF ↗
                   </a>
                 )}
               </div>

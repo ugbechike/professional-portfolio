@@ -88,6 +88,7 @@ export const profileSchema = z.object({
       name: z.string().min(1),
       issuer: z.string().min(1),
       issuedAt: z.iso.date(),
+      preview: mediaAssetSchema.optional(),
       url: externalLinkSchema.shape.url,
       pdf: z
         .string()

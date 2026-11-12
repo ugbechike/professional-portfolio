@@ -57,7 +57,13 @@
       "issuer": "Anthropic",
       "issuedAt": "2026-10-31",
       "url": "https://www.credly.com/badges/53c0c564-e630-465f-8991-03c2157d6c0c",
-      "pdf": "/certificates/claude-certified-architect-foundations.pdf"
+      "pdf": "/certificates/claude-certified-architect-foundations.pdf",
+      "preview": {
+        "src": "/images/claude-certified-architect-foundations.png",
+        "alt": "Anthropic certificate awarded to John Chike Ugbe: Claude Certified Architect - Foundations, issued October 31, 2026, expires October 31, 2027.",
+        "width": 1100,
+        "height": 850
+      }
     }
   ]
 }
