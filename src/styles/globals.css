@@ -552,10 +552,13 @@ time {
   height: auto;
   margin-bottom: 32px;
 }
-.about-project-links {
+.about-project-links,
+.certification-links {
   display: flex;
   flex-wrap: wrap;
   gap: 8px 24px;
+}
+.about-project-links {
   margin-bottom: 32px;
 }
 .certification {

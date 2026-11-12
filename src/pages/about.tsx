@@ -77,14 +77,26 @@ const About = ({
                   )}
                 </time>
               </p>
-              <a
-                className="text-link"
-                href={certification.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View credential ↗
-              </a>
+              <div className="certification-links">
+                <a
+                  className="text-link"
+                  href={certification.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View credential ↗
+                </a>
+                {certification.pdf && (
+                  <a
+                    className="text-link"
+                    href={certification.pdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Preview certificate (PDF) ↗
+                  </a>
+                )}
+              </div>
             </article>
           ))}
         </section>
