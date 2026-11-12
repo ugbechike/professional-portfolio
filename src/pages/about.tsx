@@ -96,16 +96,6 @@ const About = ({
                 >
                   View credential ↗
                 </a>
-                {certification.pdf && (
-                  <a
-                    className="text-link"
-                    href={certification.pdf}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Open original PDF ↗
-                  </a>
-                )}
               </div>
             </article>
           ))}
